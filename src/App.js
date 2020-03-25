@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import WordContext from "./contexts/WordContext";
 import Register from "./Components/Register.js";
 import Login from "./Components/Login.js";
-import PrivateRoute from "./Components/PrivateRoute.js";
+import ProtectedRoute from "./ProtectedRoute.js";
 import Navigation from "./Components/Navigation.js";
 import AddWordList from "./Components/AddWordList.js";
 import styled from "styled-components";
@@ -35,7 +35,7 @@ function App() {
             <h1>Welcome to our Puzzle Maker App!</h1> 
             <Route exact path="/" component={Login} />
             <Route path="/register" component={Register} />
-            <PrivateRoute exact path="/addWords" component={AddWordList} />
+            <ProtectedRoute exact path="/addWords" component={AddWordList} />
             {/* <PrivateRoute exact path="/updateWords" component={UpdatedWords} /> */}
             </div>
         </div>
