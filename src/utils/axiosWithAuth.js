@@ -10,3 +10,5 @@ export const axiosWithAuth = () => {
         // baseURL: `/api` 
     })
 }
+
+export default axiosWithAuth;
