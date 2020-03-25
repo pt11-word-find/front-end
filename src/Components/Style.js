@@ -1,0 +1,14 @@
+import styled from "styled-components";
+
+// AddWrodList.js
+export const ActionBtns = styled.button`
+  height: 2rem;
+  width: 5rem;
+  background: #57a95a;
+  border: 1px solid white;
+  border-radius: 3px;
+`;
+
+export const Body = styled.form`
+  color: gray; 
+`;
