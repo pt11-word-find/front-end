@@ -13,22 +13,29 @@ const Puzzle = () => {
     ])
 
     useEffect(() => {
-        setPuzzle(wordSearch(wordlist.map(item => item.toUpperCase()), 15, 15, 1))
+        setPuzzle(wordSearch(wordlist.map(item => item.toUpperCase()), 20, 20, 1))
     }, [wordlist])
 
-    useEffect(() => {
-        console.log(puzzle)
-    }, [puzzle])
+    // useEffect(() => {
+    //     console.log(puzzle)
+    // }, [puzzle])
 
     return (
-        <div>
+        <div className="puzzle">
             {puzzle.map(row => 
                 <div className="row">
                     {row.map(tile => 
-                        <div className="tile"></div>
+                        <div className="tile">
+                            {tile}
+                        </div>
                     )}
                 </div>
             )}
+            <div>
+            {wordlist.map(word => 
+            <p className="word-list">{word}</p>
+            )}
+            </div>
         
         </div>
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import Puzzle from "./Puzzle";
 
 const AddWordList = (props) => {
   const [wordList, setWordList] = useState({
@@ -21,14 +22,13 @@ const AddWordList = (props) => {
           title: "",
           wordlist: ""
         })
-        //setWordList(response.data)
-        props.history.push("/wordlists")
+        props.history.push("/addWords")
       })
       .catch(err => console.log("Error in AddWordList", err))
     };
 
     return (
-      <form onSubmit={submitForm}>
+      <form className="puzzle-form" onSubmit={submitForm}>
         <label htmlFor="title">Title</label>
           <input
             type="text"
@@ -46,7 +46,9 @@ const AddWordList = (props) => {
             onChange={handleChange}
             />
         <button type="submit">Create Puzzle</button>
+        <Puzzle />
       </form>
+      
     )
 }
 

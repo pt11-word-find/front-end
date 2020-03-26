@@ -29,7 +29,7 @@ const Login = (props)=>{
     .then( res => {
       console.log(res)
       localStorage.setItem("token", res.data.token)
-      props.history.push( "/wordlists")})
+      props.history.push( "/addWords")})
     .catch( err => {
         console.log (err)
     })
