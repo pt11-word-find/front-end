@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import axios from "axios";
+import axiosWithAuth from "../utils/axiosWithAuth";
 import styled from "styled-components";
 
 const Title = styled.h2`
@@ -24,7 +24,8 @@ const Login = (props)=>{
   }
   const handleSubmit= e=>{
     e.preventDefault()
-    axios.post ('/login', log)
+    axiosWithAuth()
+    .post ('/login', log)
     .then( res => {console.log(res)
         localStorage.setItem("token", res.data.token)
         props.history.push( "/")})
