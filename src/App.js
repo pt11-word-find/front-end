@@ -36,7 +36,7 @@ function App() {
             <h1>Welcome to our Puzzle Maker App!</h1> 
             <Route exact path="/" component={Login} />
             <Route path="/register" component={Register} />
-            <ProtectedRoute exact path="/addWords" component={AddWordList} />
+            <ProtectedRoute exact path="/wordlists" component={AddWordList} />
           <Puzzle />
             {/* <PrivateRoute exact path="/updateWords" component={UpdatedWords} /> */}
             </div>

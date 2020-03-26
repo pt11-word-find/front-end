@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import axiosWithAuth from "../utils/axiosWithAuth";
+import axios from "axios";
 import styled from "styled-components";
 
 const Title = styled.h2`
@@ -24,11 +24,12 @@ const Login = (props)=>{
   }
   const handleSubmit= e=>{
     e.preventDefault()
-    axiosWithAuth()
-    .post ('/login', log)
-    .then( res => {console.log(res)
-        localStorage.setItem("token", res.data.token)
-        props.history.push( "/")})
+    axios
+    .post ('https://wordlist-backend.herokuapp.com/auth/login', log)
+    .then( res => {
+      console.log(res)
+      localStorage.setItem("token", res.data.token)
+      props.history.push( "/wordlists")})
     .catch( err => {
         console.log (err)
     })
