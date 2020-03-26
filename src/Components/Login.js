@@ -1,6 +1,6 @@
-import React, {useState} from "react";
-import axios from "axios";
-import styled from "styled-components";
+import React, {useState} from "./node_modules/react";
+import axios from "./node_modules/axios";
+import styled from "./node_modules/styled-components";
 
 const Title = styled.h2`
   color: darkgray;

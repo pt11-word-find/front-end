@@ -1,8 +1,8 @@
-import React from "react";
-import { NavLink, Route } from "react-router-dom";
+import React from "./node_modules/react";
+import { NavLink, Route } from "./node_modules/react-router-dom";
 import WordSurge from "../images/WordSurge.png";
-import styled from "styled-components";
-import { useHistory } from "react-router-dom";
+import styled from "./node_modules/styled-components";
+import { useHistory } from "./node_modules/react-router-dom";
 
 const Header = styled.div`
   background: #2c666e;
