@@ -50,3 +50,25 @@
   height: 2.5rem;
   text-align: center;
 }
+.puzzle {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  padding: 1%;
+}
+.row {
+  align-items: center;
+  border: 1px red solid;
+  
+}
+.puzzle-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 0 auto;
+  text-align: left;
+}
+text-area {
+  height: 800px;
+}
