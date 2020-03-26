@@ -1,10 +1,11 @@
-import React, {useState} from "./node_modules/react";
+import React, {useState} from "react";
 import axios from "axios";
 import styled from "styled-components";
 
 const Title = styled.h2`
   color: darkgray;
 `;
+
 /*
 Dark Green: #073c3f
 Green Blue color: #2c666e
@@ -32,6 +33,7 @@ const Login = (props)=>{
     })
   }
   return (
+    <div>
     <form onSubmit={handleSubmit}>
       <div className="Title">
         <h2>Please Login</h2>
@@ -52,6 +54,7 @@ const Login = (props)=>{
       />
 
       <button type="submit"> Submit </button>
+      {/* <br />
       <br />
       <br />
       <br />
@@ -71,13 +74,17 @@ const Login = (props)=>{
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <footer>
-        <h6>Copyright 2020 Word Surge</h6>
-      </footer>
+      <br /> */}
+
     </form>
-  );
+
+      <div>
+        <footer className="footer">
+          <h6>&copy 2020 Word Surge</h6>
+        </footer>
+      </div>
+    </div>
+  )
 }
 
 export default Login;
