@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import wordSearch from "../utils/wordSearch-generator";
 
 const Puzzle = () => {
