@@ -21,8 +21,8 @@ const AddWordList = (props) => {
           title: "",
           wordlist: ""
         })
-        setWordList(response.data)
-        props.history.push("/protected")
+        //setWordList(response.data)
+        props.history.push("/wordlists")
       })
       .catch(err => console.log("Error in AddWordList", err))
     };
