@@ -6,6 +6,7 @@ import Login from "./Components/Login.js";
 import ProtectedRoute from "./ProtectedRoute.js";
 import Navigation from "./Components/Navigation.js";
 import AddWordList from "./Components/AddWordList.js";
+import Puzzle from "./Components/Puzzle";
 import styled from "styled-components";
 import './App.scss';
 
@@ -36,6 +37,7 @@ function App() {
             <Route exact path="/" component={Login} />
             <Route path="/register" component={Register} />
             <ProtectedRoute exact path="/addWords" component={AddWordList} />
+          <Puzzle />
             {/* <PrivateRoute exact path="/updateWords" component={UpdatedWords} /> */}
             </div>
         </div>
