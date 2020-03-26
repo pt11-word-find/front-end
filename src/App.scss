@@ -52,16 +52,27 @@
 }
 .puzzle {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 50%;
   margin: 0 auto;
   padding: 1%;
 }
 .row {
   align-items: center;
-  border: 1px red solid;
-  
+  //border: 1px red solid;
+
 }
+
+.tile {
+  align-items: center;
+  border: 1px blue solid;
+  width: 25px;
+  height: 25px;
+  justify-content: center;
+  text-align: center;
+  padding-top: 3px;
+}
+
 .puzzle-form {
   display: flex;
   flex-direction: column;
