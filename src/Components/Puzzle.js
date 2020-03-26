@@ -24,10 +24,9 @@ const Puzzle = () => {
         <div className="puzzle">
             {puzzle.map(row => 
                 <div className="row">
-                
                     {row.map(tile => 
                         <div className="tile">
-                        {tile}
+                            {tile}
                         </div>
                     )}
                 </div>
