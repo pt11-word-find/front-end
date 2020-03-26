@@ -59,7 +59,7 @@ const Login = (props)=>{
 
       <div>
         <footer className="footer">
-          <h6>&copy 2020 Word Surge</h6>
+        {'\u00A9'} 2020 Word Surge
         </footer>
       </div>
     </div>

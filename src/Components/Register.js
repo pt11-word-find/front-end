@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import axios from "axios";
+import axiosWithAuth from "../utils/axiosWithAuth";
 import styled from "styled-components";
 
 const FormWrapper = styled.form`
@@ -35,8 +35,10 @@ const Register = (props)=>{
     }
     const handleSubmit= e=>{
       e.preventDefault()
-      axios.post ('/register', data)
+      axiosWithAuth()
+      .post ('/register', data)
       .then( res => {console.log(res)
+        setData(res.data)
       props.history.push( "/Login")})
       .catch( err => {
           console.log (err)
