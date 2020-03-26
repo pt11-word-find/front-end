@@ -13,7 +13,7 @@ const Puzzle = () => {
     ])
 
     useEffect(() => {
-        setPuzzle(wordSearch(wordlist.map(item => item.toUpperCase()), 15, 15, 1))
+        setPuzzle(wordSearch(wordlist.map(item => item.toUpperCase()), 20, 20, 1))
     }, [wordlist])
 
     // useEffect(() => {
@@ -33,7 +33,7 @@ const Puzzle = () => {
             )}
             <div>
             {wordlist.map(word => 
-            <p className="word-list">{word}<br /></p>
+            <p className="word-list">{word}</p>
             )}
             </div>
         
