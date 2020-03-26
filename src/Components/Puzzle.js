@@ -31,6 +31,11 @@ const Puzzle = () => {
                     )}
                 </div>
             )}
+            <div>
+            {wordlist.map(word => 
+            <p className="word-list">{word}<br /></p>
+            )}
+            </div>
         
         </div>
 

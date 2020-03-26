@@ -83,3 +83,12 @@
 text-area {
   height: 800px;
 }
+
+.word-list {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  width: 400px;
+  height: 50px;
+}
