@@ -25,7 +25,8 @@ const Puzzle = () => {
             {puzzle.map(row => 
                 <div className="row">
                     {row.map(tile => 
-                        <div className="tile"></div>
+                        <div className="tile">{puzzle[0]}
+                        {console.log(puzzle[0])}</div>
                     )}
                 </div>
             )}
