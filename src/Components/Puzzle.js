@@ -21,24 +21,25 @@ const Puzzle = () => {
     // }, [puzzle])
 
     return (
+        <div className="container">
         <div className="puzzle">
-            {puzzle.map(row => 
-                <div className="row">
-                    {row.map(tile => 
-                        <div className="tile">
+            {puzzle.map((row, r_index) => 
+                <div key={r_index + row} className="row">
+                    {row.map((tile, c_index) => 
+                        <div key={c_index + tile} className="tile" onClick>
                             {tile}
                         </div>
                     )}
                 </div>
             )}
-            <div>
-            {wordlist.map(word => 
-            <p className="word-list">{word}</p>
-            )}
-            </div>
-        
-        </div>
 
+        </div>
+        <div className="word-list">
+            {wordlist.map(word => 
+            <p>{word}</p>
+            )}
+        </div>
+    </div>
     )
 }
 

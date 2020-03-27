@@ -42,7 +42,10 @@
     transform: rotate(360deg);
   }
 }
-
+.container {
+  display: flex;
+  justify-content: center;
+}
 .footer {
   position: absolute;
   width: 100%;
@@ -52,18 +55,20 @@
 }
 .puzzle {
   display: flex;
-  flex-direction: row;
-  width: 50%;
-  margin: 0 auto;
+  flex-direction: column;
+  width: 60%;
+  // margin: 0 auto;
   padding: 1%;
 }
 .row {
   align-items: center;
+  //display: flex;
   //border: 1px red solid;
-
+ 
 }
 
 .tile {
+  display: inline-block;
   align-items: center;
   //border: 1px blue solid;
   width: 25px;
@@ -85,11 +90,7 @@ text-area {
 }
 
 .word-list {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
   text-align: left;
-  width: 400px;
-  height: 50px;
+  width: 20%;
   padding-left: 50px;
 }
