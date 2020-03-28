@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // AddWrodList.js
 export const ActionBtns = styled.button`
-  height: 2rem;
+  height: 5rem;
   width: 5rem;
   background: #57a95a;
   border: 1px solid white;

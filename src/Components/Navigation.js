@@ -6,7 +6,9 @@ import { useHistory } from "react-router-dom";
 
 const Header = styled.div`
   background: #2c666e;
-  height: 18rem;
+  height: 19rem;
+  margin: 20px;
+  border-radius: 8px;
 `;
 
 /*
@@ -19,7 +21,8 @@ const Links = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 35%;
+  width: 40%;
+
 `;
 
 const HeaderLink = styled.h4``;
@@ -38,7 +41,8 @@ export function Navigation() {
           <h1 className="navbar-brand" to={"/"}>
             <a 
               href=""
-              style={{ textDecoration: "underline overline", color: "black" }}>
+              style={{ textDecoration: "underline overline", 
+              color: "black" }}>
               Word Surge  
               </a>
           </h1>
@@ -66,6 +70,11 @@ export function Navigation() {
           <HeaderLink>
             <NavLink className="nav-links" to={"/addWords"}>
               Add Words
+            </NavLink>
+          </HeaderLink>
+          <HeaderLink>
+            <NavLink className="nav-links" to={"/aboutus"}>
+              About Us
             </NavLink>
           </HeaderLink>
         </Links>

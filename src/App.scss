@@ -1,6 +1,7 @@
 * {
-  margin:0;
-  padding:0;
+  margin: auto;
+  margin-top: 1px;
+  padding:1px;
   box-sizing:border-box;
 }
 
@@ -11,6 +12,13 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.bt1 {
+  padding: 3px;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  background-color: #ffeee2;
+  border-radius: 0px 0px 8px 8px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -42,6 +50,29 @@
     transform: rotate(360deg);
   }
 }
+.text_area1{
+  width: 200px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: #ffeee2;
+}
+
+.text_area {
+  width: 300px;
+  height: 50px;
+  border-radius: 8px;
+  background-color:  #ffeee2;
+
+}
+.nav-links {
+  font-size: 1.2rem;
+  color:  #30071f;
+  background-color: #c067b1;
+  border-radius: 8px;
+  padding: 5px;
+  text-decoration: none;
+}
+
 
 .footer {
   position: absolute;
@@ -53,9 +84,13 @@
 .puzzle {
   display: flex;
   flex-direction: row;
-  width: 50%;
-  margin: 0 auto;
+  width: 90%;
+  border-radius: 8px;
+  padding: 50px;
+  background-color:  #90ddf0;
+  margin: 50px;
   padding: 1%;
+  
 }
 .row {
   align-items: center;
@@ -76,7 +111,7 @@
 .puzzle-form {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
   text-align: left;
 }
@@ -86,6 +121,7 @@ text-area {
 
 .word-list {
   display: flex;
+  font-family: sans-serif ;
   flex-direction: column;
   margin: 0 auto;
   text-align: left;

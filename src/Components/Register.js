@@ -69,7 +69,7 @@ const Register = (props)=>{
         onChange={handleChange}
       />
       
-      <button type="submit"> Submit </button>
+      <button class = "bt1" type="submit"> Submit </button>
     </FormWrapper>
   );
 }

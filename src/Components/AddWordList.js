@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import Puzzle from "./Puzzle";
+import "../App.scss"
 
 const AddWordList = (props) => {
   const [wordList, setWordList] = useState({
@@ -29,23 +30,23 @@ const AddWordList = (props) => {
 
     return (
       <form className="puzzle-form" onSubmit={submitForm}>
-        <label htmlFor="title">Title</label>
-          <input
+        <label htmlFor="title"><h2>Title</h2></label>
+          <input class = "text_area1"
             type="text"
             name="title"
             placeholder="Add a title for your Puzzle"
             value={wordList.title}
             onChange={handleChange}
           />
-        <label htmlFor="source">Puzzle Source</label>
-          <textarea
+        <label htmlFor="source"><h2>Puzzle Source</h2></label>
+          <textarea class = "text_area"
             type="text"
             name="wordlist"
             placeholder="Add your words separated by a comma"
             value={wordList.wordlist}
             onChange={handleChange}
             />
-        <button type="submit">Create Puzzle</button>
+        <button class = "bt1" type="submit">Create Puzzle</button>
         <Puzzle />
       </form>
       
