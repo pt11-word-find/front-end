@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import axios from "axios";
 import styled from "styled-components";
+import axios from "axios";
 
 const FormWrapper = styled.form`
   display: flex;
@@ -24,10 +24,8 @@ const Register = (props)=>{
 
     const [data, setData]= useState({
         username: "",
-        first_name: "",
-        last_name: "",
-        password: '',
-        email: "",
+        password: ""
+        
 
     })
     const handleChange= e=>{
@@ -35,17 +33,19 @@ const Register = (props)=>{
     }
     const handleSubmit= e=>{
       e.preventDefault()
-      axios.post ('/register', data)
-      .then( res => {console.log(res)
-      props.history.push( "/Login")})
+      axios
+      .post ('https://wordlist-backend.herokuapp.com/auth/register', data)
+      .then( res => {
+        console.log(res)
+        localStorage.setItem("token", res.data.token)
+        props.history.push( "/wordlists")})
       .catch( err => {
           console.log (err)
       })
-      setData({ username: "",
-      first_name: "",
-      last_name: "",
-      password: '',
-      email: "",})
+      setData({ 
+        username: "",
+        password: ""
+      })
     }
 
   return (
@@ -60,20 +60,7 @@ const Register = (props)=>{
         value={data.username}
         onChange={handleChange}
       />
-      <input
-        placeholder="First Name"
-        type="text"
-        name="first_name"
-        value={data.first_name}
-        onChange={handleChange}
-      />
-      <input
-        placeholder="Last Name"
-        type="text"
-        name="last_name"
-        value={data.last_name}
-        onChange={handleChange}
-      />
+      
       <input
         placeholder="Password"
         type="password"
@@ -81,13 +68,7 @@ const Register = (props)=>{
         value={data.password}
         onChange={handleChange}
       />
-      <input
-        placeholder="e-mail"
-        type="text"
-        name="email"
-        value={data.email}
-        onChange={handleChange}
-      />
+      
       <button type="submit"> Submit </button>
     </FormWrapper>
   );

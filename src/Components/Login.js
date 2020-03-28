@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Title = styled.h2`
   color: darkgray;
 `;
+
 /*
 Dark Green: #073c3f
 Green Blue color: #2c666e
@@ -23,15 +24,18 @@ const Login = (props)=>{
   }
   const handleSubmit= e=>{
     e.preventDefault()
-    axios.post ('/login', log)
-    .then( res => {console.log(res)
-        localStorage.setItem("token", res.data.token)
-        props.history.push( "/")})
+    axios
+    .post ('https://wordlist-backend.herokuapp.com/auth/login', log)
+    .then( res => {
+      console.log(res)
+      localStorage.setItem("token", res.data.token)
+      props.history.push( "/addWords")})
     .catch( err => {
         console.log (err)
     })
   }
   return (
+    <div>
     <form onSubmit={handleSubmit}>
       <div className="Title">
         <h2>Please Login</h2>
@@ -52,32 +56,15 @@ const Login = (props)=>{
       />
 
       <button type="submit"> Submit </button>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <footer>
-        <h6>Copyright 2020 Word Surge</h6>
-      </footer>
     </form>
-  );
+
+      <div>
+        <footer className="footer">
+        {'\u00A9'} 2020 Word Surge
+        </footer>
+      </div>
+    </div>
+  )
 }
 
 export default Login;
