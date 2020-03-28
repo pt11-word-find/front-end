@@ -29,6 +29,7 @@ const AddWordList = (props) => {
     };
 
     return (
+      <>
       <form className="puzzle-form" onSubmit={submitForm}>
         <label htmlFor="title"><h2>Title</h2></label>
           <input class = "text_area1"
@@ -49,7 +50,8 @@ const AddWordList = (props) => {
         <button class = "bt1" type="submit">Create Puzzle</button>
         <Puzzle />
       </form>
-      
+      <Puzzle />
+      </>
     )
 }
 

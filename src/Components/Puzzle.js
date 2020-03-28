@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import wordSearch from "../utils/wordSearch-generator";
 
 const Puzzle = () => {
+    
 
     const [puzzle, setPuzzle] = useState([[]])
+    const [selectLetter, setSelectLetter] = useState([])
     const [wordlist, setWordlist] = useState([
         "eggs",
         "sugar",
@@ -13,32 +15,37 @@ const Puzzle = () => {
     ])
 
     useEffect(() => {
-        setPuzzle(wordSearch(wordlist.map(item => item.toUpperCase()), 20, 20, 1))
+        setPuzzle(wordSearch(wordlist.map(item => item.toUpperCase()), 10, 10, 1))
     }, [wordlist])
 
     // useEffect(() => {
     //     console.log(puzzle)
     // }, [puzzle])
 
+    const handleChange = event => {
+        setSelectLetter({ ...selectLetter, [event.target.name]: event.target.value })
+    }
+
     return (
+        <div className="container">
         <div className="puzzle">
-            {puzzle.map(row => 
-                <div className="row">
-                    {row.map(tile => 
-                        <div className="tile">
+            {puzzle.map((row, r_index) => 
+                <div key={r_index + row} className="row">
+                    {row.map((tile, c_index) => 
+                        <div key={c_index + tile} className="tile" id="tile">
                             {tile}
                         </div>
                     )}
                 </div>
             )}
-            <div>
-            {wordlist.map(word => 
-            <p className="word-list">{word}</p>
-            )}
-            </div>
-        
-        </div>
 
+        </div>
+        <div className="word-list">
+            {wordlist.map(word => 
+            <p>{word}</p>
+            )}
+        </div>
+    </div>
     )
 }
 
