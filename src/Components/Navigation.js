@@ -10,9 +10,9 @@ const Header = styled.div`
 `;
 
 /*
-Dark Green: #073c3f
-Green Blue color: #2c666e
-Powder blue: #90ddf0
+Rich Black Green: #073c3f
+Myrtle Green: #2c666e
+Baby Blue: #90ddf0
 */
 
 const Links = styled.div`

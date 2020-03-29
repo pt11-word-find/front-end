@@ -7,22 +7,24 @@ const Title = styled.h2`
 `;
 
 /*
-Dark Green: #073c3f
-Green Blue color: #2c666e
-Powder blue: #90ddf0
+Rich Black Green: #073c3f
+Myrtle Green: #2c666e
+Baby Blue: #90ddf0
 */
 
-const Login = (props)=>{
+const Login = (props) => {
 
-  const [log, setLog]= useState({
+  const [log, setLog] = useState({
     username: "",
-    password: "",
+    password: ""
 
   })
-  const handleChange= e=>{
+
+  const handleChange= e =>{
     setLog({...log, [e.target.name ]: e.target.value})
   }
-  const handleSubmit= e=>{
+
+  const handleSubmit= e =>{
     e.preventDefault()
     axios
     .post ('https://wordlist-backend.herokuapp.com/auth/login', log)
@@ -34,6 +36,7 @@ const Login = (props)=>{
         console.log (err)
     })
   }
+
   return (
     <div>
     <form onSubmit={handleSubmit}>

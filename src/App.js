@@ -19,9 +19,9 @@ const Title = styled.h1`
 `
 
 /*
-Dark Green: #073c3f
-Green Blue color: #2c666e
-Powder blue: #90ddf0
+Rich Black Green: #073c3f
+Myrtle Green: #2c666e
+Baby Blue: #90ddf0
 */
 
 function App() {
@@ -32,14 +32,14 @@ function App() {
       <WordContext.Provider value={{ events, setEvents }}>
         <div className="App">
           <Navigation />
-            <div className="Title">
-            <h1>Welcome to our Puzzle Maker App!</h1> 
+          <div className="Title">
+            <h1>Welcome to our Puzzle Maker App!</h1>
             <Route exact path="/" component={Login} />
             <Route path="/register" component={Register} />
             <ProtectedRoute exact path="/addWords" component={AddWordList} />
           
             {/* <PrivateRoute exact path="/updateWords" component={UpdatedWords} /> */}
-            </div>
+          </div>
         </div>
       </WordContext.Provider>
     </Router>
