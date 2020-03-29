@@ -9,7 +9,6 @@ Michael Harms
 
 Developers:
 Kristi Gribble
-Emily Gauthier
 Shya Biswas
 Brian Leonard
 Catherine Kim
