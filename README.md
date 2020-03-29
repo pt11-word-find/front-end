@@ -10,11 +10,11 @@ The database source code and deployment info can be found here: https://github.c
 
 ## Team
 
-Project Manager:
+#### Project Manager:
 
 Michael Harms
 
-Developers:
+#### Developers:
 
 Kristi Gribble
 
