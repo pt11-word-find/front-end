@@ -18,7 +18,7 @@ function App() {
     <Router>
       <WordContext.Provider value={{ events, setEvents }}>
         <div className="App">
-          {/* <Navigation /> */}
+          <Navigation />
           <div className="Title">
             <ProtectedRoute exact path="/addWords" component={AddWordList} />
             {/* <ProtectedRoute exact path="/updateWords" component={UpdatedWords} /> */}

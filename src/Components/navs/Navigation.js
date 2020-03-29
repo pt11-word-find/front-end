@@ -46,7 +46,7 @@ export function Navigation() {
             </NavLink>{" "}
           </HeaderLink>
           <HeaderLink>
-            <NavLink className="nav-links" to={"/"}>
+            <NavLink className="nav-links" to={"/login"}>
               Log In
             </NavLink>
           </HeaderLink>

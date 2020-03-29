@@ -1,13 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'reactstrap'
-import Navigation from '../navs/Navigation'
 import Footer from '../navs/Footer'
 
 const LandingPage = () => {
   return (
     <section>
-      <Navigation />
       <section className='landing-container'>
         <span className='landing-header'>
           <img src="" alt='' className='img-puzzle' />

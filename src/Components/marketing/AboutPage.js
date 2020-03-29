@@ -1,5 +1,4 @@
 import React from 'react';
-import Navigation from '../navs/Navigation';
 import Mike from "../../images/mike.jpg";
 import Kristy from "../../images/kristy.png";
 import Shya from "../../images/shya.jpg";
@@ -11,7 +10,6 @@ const AboutPage = () => {
 
   return (
     <section>
-      <Navigation />
       <br />
       <div>
         <h2>About US</h2>
