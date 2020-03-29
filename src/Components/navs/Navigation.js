@@ -13,7 +13,8 @@ const Links = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 35%;
+  width: 40%;
+
 `;
 
 const HeaderLink = styled.h4``;
@@ -57,6 +58,11 @@ export function Navigation() {
           </HeaderLink>
           <HeaderLink>
             <NavLink className="nav-links" to={"/about"}>
+              About Us
+            </NavLink>
+          </HeaderLink>
+          <HeaderLink>
+            <NavLink className="nav-links" to={"/aboutus"}>
               About Us
             </NavLink>
           </HeaderLink>
