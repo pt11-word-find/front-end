@@ -1,5 +1,4 @@
 import React, { useState } from "react"; 
-import { Formik, FormikProps, Form, Field } from "formik";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -37,7 +36,7 @@ const Register = (props) => {
       .then( res => {
         console.log(res)
         localStorage.setItem("token", res.data.token)
-        props.history.push( "/")})
+        props.history.push( "/login")})
       .catch( err => {
           console.log (err)
       })

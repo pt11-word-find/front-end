@@ -58,14 +58,8 @@ const Login = (props) => {
         onChange={handleChange}
       />
 
-      <button type="submit"> Submit </button>
-    </form>
-
-      <div>
-        <footer className="footer">
-        {'\u00A9'} 2020 Word Surge
-        </footer>
-      </div>
+        <button type="submit"> Submit </button>
+      </form>
     </div>
   )
 }
