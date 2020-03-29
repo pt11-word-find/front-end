@@ -76,6 +76,7 @@
   justify-content: center;
   text-align: center;
   padding-top: 3px;
+  cursor: pointer;
 }
 
 .puzzle-form {
@@ -93,4 +94,9 @@ text-area {
   text-align: left;
   width: 20%;
   padding-left: 50px;
+}
+
+.selectedTile {
+  background: #2C666E;
+  color: white;
 }
