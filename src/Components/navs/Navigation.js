@@ -51,14 +51,6 @@ export function Navigation() {
             </NavLink>
           </HeaderLink>
           <HeaderLink>
-            <NavLink 
-              className="nav-links" 
-              to={"/logout"}>
-              {/* onClick={handleLogout}> */}
-              Log Out
-            </NavLink>
-          </HeaderLink>
-          <HeaderLink>
             <NavLink className="nav-links" to={"/addWords"}>
               Add Words
             </NavLink>

@@ -14,7 +14,7 @@ const LandingPage = () => {
         <section className='landing-container-content'>
           <h3>Welcome to Our Puzzle Making App!</h3>
           <br/>
-          <h4>Our Goal</h4>
+          <h4>Our Goal:</h4>
           <br/>
           <span>
             <h5>
