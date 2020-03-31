@@ -8,25 +8,42 @@ const Puzzle = () => {
 
     const [puzzle, setPuzzle] = useState([[]])
     const [selectLetter, setSelectLetter] = useState([])
+    const [solved, setSolved] = useState([])
     const [wordlist, setWordlist] = useState([
         "eggs",
         "sugar",
         "butter",
         "flour",
         "chocolate"
-    ])
+    ].map(item => {
+        return {
+            word: item,
+            solved: false
+        }
+    }))
 
     useEffect(() => {
-        setPuzzle(wordSearch(wordlist.map(item => item.toUpperCase()), 10, 10, 1))
-    }, [wordlist])
+        setPuzzle(wordSearch(wordlist.map(item => item.word.toUpperCase()), 10, 10, 1))
+    }, [])
 
+    // When letters in the array are 'Matched' to a wordlist word - change letter background colors,
+    // *add to solved array*, cross word from the list or remove word from the list.
     useEffect(() => {
         let sortedSelect = selectLetter.map(item => puzzle[item[0]][item[1]]).sort()
-        
+        console.log("Solved array", solved)
         wordlist.map(item => {
-            if (arrayEqual(sortedSelect, item.toUpperCase().split("").sort())) {
-                console.log(item.split("").sort())
-                console.log("Match")
+            if (arrayEqual(sortedSelect, item.word.toUpperCase().split("").sort())) { 
+                setWordlist([
+                    ...wordlist.filter(oldWord => oldWord.word !== item.word), {
+                        word: item.word,
+                        solved: true
+                    }
+                ])
+                setSolved([...selectLetter, ...solved])
+                setSelectLetter([])
+                
+                //console.log(item.split("").sort())
+                //console.log("Match")
             }
             
         })
@@ -54,7 +71,11 @@ const Puzzle = () => {
             {puzzle.map((row, r_index) => 
                 <div key={r_index + row} className="row">
                     {row.map((tile, c_index) => 
-                        <div key={c_index + tile} className={arrayIncluded(selectLetter, [r_index, c_index]) ? "selectedTile tile" : "tile"} onClick={() => toggleLetter(r_index, c_index)}>
+                        <div key={c_index + tile} className={arrayIncluded(selectLetter, [r_index, c_index]) 
+                            ? "selectedTile tile" 
+                            : arrayIncluded(solved, [r_index, c_index])
+                                ? "solvedTile tile"
+                                : "tile"} onClick={() => toggleLetter(r_index, c_index)}>
                             {tile}
                         </div>
                     )}
@@ -64,7 +85,7 @@ const Puzzle = () => {
         </div>
         <div className="word-list">
             {wordlist.map(word => 
-            <p>{word}</p>
+            <p className={word.solved ? "crossedOut" : ""}>{word.word}</p>
             )}
         </div>
     </div>

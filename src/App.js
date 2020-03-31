@@ -7,6 +7,7 @@ import ProtectedRoute from "./ProtectedRoute.js";
 import Navigation from "./Components/Navigation.js";
 import AddWordList from "./Components/AddWordList.js";
 import Puzzle from "./Components/Puzzle";
+import Footer from "./Components/navs/Footer";
 import styled from "styled-components";
 import './App.scss';
 
@@ -40,6 +41,7 @@ function App() {
           
             {/* <PrivateRoute exact path="/updateWords" component={UpdatedWords} /> */}
             </div>
+            <Footer />
         </div>
       </WordContext.Provider>
     </Router>
