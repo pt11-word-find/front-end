@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import { Navbar, NavbarBrand, Button } from 'reactstrap';
-import { useHitsory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import styled from "styled-components";
 
 const Title = styled.h2`

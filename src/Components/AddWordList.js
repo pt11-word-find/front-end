@@ -32,7 +32,7 @@ const AddWordList = (props) => {
       <>
       <form className="puzzle-form" onSubmit={submitForm}>
         <label htmlFor="title"><h2>Title</h2></label>
-          <input class = "text_area1"
+          <input className="text_area1"
             type="text"
             name="title"
             placeholder="Add a title for your Puzzle"
@@ -40,15 +40,15 @@ const AddWordList = (props) => {
             onChange={handleChange}
           />
         <label htmlFor="source"><h2>Puzzle Source</h2></label>
-          <textarea class = "text_area"
+          <textarea className="text_area"
             type="text"
             name="wordlist"
             placeholder="Add your words separated by a comma"
             value={wordList.wordlist}
             onChange={handleChange}
             />
-        <button class = "bt1" type="submit">Create Puzzle</button>
-        <Puzzle />
+        <button className="bt1" type="submit">Create Puzzle</button>
+        
       </form>
       <Puzzle />
       </>

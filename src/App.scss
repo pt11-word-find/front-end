@@ -1,32 +1,18 @@
 * {
-  margin: auto;
-  margin-top: 1px;
-  padding:1px;
+  margin:0;
+  padding:0;
   box-sizing:border-box;
 }
-
+​
 .App {
   text-align: center;
 }
-
+​
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-.bt1 {
-  padding: 3px;
-  margin-top: 10px;
-  font-size: 1.5rem;
-  background-color: #ffeee2;
-  border-radius: 0px 0px 8px 8px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+​
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -37,61 +23,36 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+​
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-.text_area1{
-  width: 200px;
-  height: 30px;
-  border-radius: 8px;
-  background-color: #ffeee2;
-}
-.text_area {
-  width: 300px;
-  height: 50px;
-  border-radius: 8px;
-  background-color:  #ffeee2;
-}
-.nav-links {
-  font-size: 1.2rem;
-  color:  #30071f;
-  background-color: #c067b1;
-  border-radius: 8px;
-  padding: 5px;
-  text-decoration: none;
+.container {
+  display: flex;
+  justify-content: center;
 }
 .footer {
   position: absolute;
   width: 100%;
   bottom: 0;
-  height: 1rem;
+  height: 2.5rem;
   text-align: center;
 }
 .puzzle {
   display: flex;
-  flex-direction: row;
-  width: 90%;
-  border-radius: 8px;
-  padding: 50px;
-  background-color:  #90ddf0;
-  margin: 50px;
+  flex-direction: column;
+  width: 60%;
+  // margin: 0 auto;
   padding: 1%;
 }
 .row {
   align-items: center;
   //display: flex;
   //border: 1px red solid;
+ 
 }
+​
 .tile {
   display: inline-block;
   align-items: center;
@@ -103,26 +64,24 @@
   padding-top: 3px;
   cursor: pointer;
 }
+​
 .puzzle-form {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 40%;
   margin: 0 auto;
   text-align: left;
 }
 text-area {
   height: 800px;
 }
+​
 .word-list {
-  display: flex;
-  font-family: sans-serif ;
-  flex-direction: column;
-  margin: 0 auto;
   text-align: left;
   width: 20%;
   padding-left: 50px;
 }
-
+​
 .selectedTile {
   background: #2C666E;
   color: white;
