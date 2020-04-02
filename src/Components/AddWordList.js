@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import Puzzle from "./Puzzle";
-
+import WordContext from "../contexts/WordContext";
 const AddWordList = (props) => {
   const [wordList, setWordList] = useState({
     title: "",
     wordlist: ""
+
   })
+  const {puzzle, setPuzzle} = useContext(WordContext)
 
   const handleChange = event => {
     setWordList({ ...wordList, [event.target.name]: event.target.value });
@@ -30,14 +32,14 @@ const AddWordList = (props) => {
     return (
       <>
       <form className="puzzle-form" onSubmit={submitForm}>
-        <label htmlFor="title">Title</label>
-          <input
+      <label htmlFor="source">Puzzle Title</label>
+          <textarea
             type="text"
             name="title"
-            placeholder="Add a title for your Puzzle"
+            placeholder="Add a title for your puzzle"
             value={wordList.title}
             onChange={handleChange}
-          />
+            />
         <label htmlFor="source">Puzzle Source</label>
           <textarea
             type="text"
@@ -46,6 +48,7 @@ const AddWordList = (props) => {
             value={wordList.wordlist}
             onChange={handleChange}
             />
+
         <button type="submit">Create Puzzle</button>
         
       </form>
