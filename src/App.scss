@@ -21,11 +21,14 @@
   border-radius: 0px 0px 8px 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
+// @media {
+//   .puzzle{width: 100%;}
+//   .nav-links {
+//     font-size: 0.8rem;
+//     color:  #30071f;
+//     background-color: #c067b1;}
+// }
 
 .App-header {
   background-color: #282c34;

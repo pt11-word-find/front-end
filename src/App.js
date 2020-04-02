@@ -25,11 +25,11 @@ Powder blue: #90ddf0
 */
 
 function App() {
-  const [events, setEvents] = useState([]);
+  const [puzzle, setPuzzle] = useState([[]]);
 
   return (
     <Router>
-      <WordContext.Provider value={{ events, setEvents }}>
+      <WordContext.Provider value={{ puzzle, setPuzzle }}>
         <div className="App">
           <Navigation />
             <div className="Title">

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import wordSearch from "../utils/wordSearch-generator";
+import AddWordList from "../Components/AddWordList"
 
 const Puzzle = () => {
 
@@ -13,8 +14,10 @@ const Puzzle = () => {
     ])
 
     useEffect(() => {
-        setPuzzle(wordSearch(wordlist.map(item => item.toUpperCase()), 20, 20, 1))
-    }, [wordlist])
+        if( wordlist.length > 1)
+        {setPuzzle(wordSearch(wordlist.map(item => item.toUpperCase()), 
+        20, 20, 1))}
+    }, [])
 
     // useEffect(() => {
     //     console.log(puzzle)
