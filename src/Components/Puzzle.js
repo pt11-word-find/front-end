@@ -60,6 +60,7 @@ const Puzzle = () => {
     // if selectLetter does not contain tile, add tile to the array, color letter to indicate it's in the array.
     
     const toggleLetter = (r_index, c_index) => {
+        if (wordlist.length === wordlist.filter(item => item.solved).length) return
         if (arrayIncluded(selectLetter, [r_index, c_index])) {
             setSelectLetter(selectLetter.filter(item => !arrayEqual(item, [r_index, c_index])))
         } else {
@@ -71,10 +72,15 @@ const Puzzle = () => {
     return (
         <div className="container">
         <div className="puzzle">
-            {(wordlist.length === wordlist.filter(item => item.solved).length) ? (<img src={stars}></img>) : ""
-                // console.log("Solved", solved)
-                // console.log("wordlist", wordlist)
-                // console.log("Winner")
+            {(wordlist.length === wordlist.filter(item => item.solved).length) 
+            ? 
+            (
+                <div>
+                    <img src={stars} alt="star graphic"></img>
+                </div>
+            ) 
+            : 
+            ""
             }
             <br />
             {puzzle.map((row, r_index) => 
