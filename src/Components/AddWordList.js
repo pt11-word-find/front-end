@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import Puzzle from "./Puzzle";
-import "../App.scss"
-
+import WordContext from "../contexts/WordContext";
 const AddWordList = (props) => {
   const [wordList, setWordList] = useState({
     title: "",
     wordlist: ""
+
   })
+  const {puzzle, setPuzzle} = useContext(WordContext)
 
   const handleChange = event => {
     setWordList({ ...wordList, [event.target.name]: event.target.value });
@@ -31,24 +32,25 @@ const AddWordList = (props) => {
     return (
       <>
       <form className="puzzle-form" onSubmit={submitForm}>
-        <label htmlFor="title"><h2>Title</h2></label>
-          <input class = "text_area1"
+      <label htmlFor="source">Puzzle Title</label>
+          <textarea
             type="text"
             name="title"
-            placeholder="Add a title for your Puzzle"
+            placeholder="Add a title for your puzzle"
             value={wordList.title}
             onChange={handleChange}
-          />
-        <label htmlFor="source"><h2>Puzzle Source</h2></label>
-          <textarea class = "text_area"
+            />
+        <label htmlFor="source">Puzzle Source</label>
+          <textarea
             type="text"
             name="wordlist"
             placeholder="Add your words separated by a comma"
             value={wordList.wordlist}
             onChange={handleChange}
             />
-        <button class = "bt1" type="submit">Create Puzzle</button>
-        <Puzzle />
+
+        <button type="submit">Create Puzzle</button>
+        
       </form>
       <Puzzle />
       </>
