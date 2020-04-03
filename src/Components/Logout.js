@@ -1,9 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import WordContext from "../contexts/WordContext"
 const Logout = () => {
+   const {setLoggedIn} = React.useContext(WordContext);
+   const logout = _ => {
+      localStorage.removeItem("token")
+      setLoggedIn(false)
+   }
+
    return(
-      <Link to="/login"><button type="submit" onClick={() => localStorage.removeItem("token")}>Logout</button></Link>
+      <Link className="nav-links" to="/login" onClick={logout}>Logout</Link>
    )
 }
 

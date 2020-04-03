@@ -4,6 +4,7 @@ import WordSurge from "../../images/WordSurge.png";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import Logout from "../Logout";
+import WordContext from "../../contexts/WordContext";
 
 const Header = styled.div`
   background: #2c666e;
@@ -28,10 +29,7 @@ Baby Blue: #90ddf0
 
 export function Navigation() {
   const history = useHistory();
-
-  const handleLogout = () => {
-    return localStorage.removeItem("token"), history.push("/");
-  };
+  const {loggedIn} = React.useContext(WordContext)
 
   return (
     <Header className="navbar navbar-default">
@@ -45,31 +43,37 @@ export function Navigation() {
               Play Now!
             </NavLink>
           </HeaderLink> 
+          { loggedIn ? 
           <HeaderLink>
-            <NavLink className="nav-links" to={"/register"}>
+            <NavLink className="nav-links" to={"/addWords"}>
+              Add Words
+            </NavLink>
+          </HeaderLink>
+          : null}
+          <HeaderLink>
+            <NavLink className="nav-links" to={"/about"}>
+              About Us
+            </NavLink>
+          </HeaderLink>
+          
+          {!loggedIn
+          ?
+          <>
+          <HeaderLink>
+          <NavLink className="nav-links" to={"/register"}>
               Register
-            </NavLink>{" "}
+          </NavLink>{" "}
           </HeaderLink>
           <HeaderLink>
             <NavLink className="nav-links" to={"/login"}>
               Log In
             </NavLink>
           </HeaderLink>
-          <HeaderLink>
-            <NavLink className="nav-links" to={"/addWords"}>
-              Add Words
-            </NavLink>
-          </HeaderLink>
-          <HeaderLink>
-            <NavLink className="nav-links" to={"/about"}>
-              About Us
-            </NavLink>
-          </HeaderLink>
-          <HeaderLink>
-            <NavLink className="nav-links" to={"/"}>
-              Logout
-            </NavLink>
-          </HeaderLink>
+          </>
+          : <HeaderLink>
+          <Logout />
+        </HeaderLink>}
+          
         </Links>
       </div>
     </Header>
