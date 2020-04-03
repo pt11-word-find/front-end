@@ -17,7 +17,7 @@
   margin-top: 10px;
   font-size: 1.5rem;
   background-color: #ffeee2;
-  border-radius: 0px 0px 8px 8px;
+  border-radius: 8px;
 }
 
 
@@ -66,10 +66,21 @@
 }
 .nav-links {
   font-size: 1.2rem;
-  color:  #30071f;
-  background-color: #c067b1;
+  color:  #2C666E;
+  background-color: #e3e5e4;
   border-radius: 8px;
   padding: 5px;
+  text-decoration: none;
+  border: 1px black solid;
+}
+.play-now {
+  color: #2C666E;
+  background-color: white;
+  border: 1px black solid;
+}
+.nav-links:hover {
+  color: #2C666E;
+  background-color: white;
   text-decoration: none;
 }
 .footer {
@@ -130,7 +141,7 @@ text-area {
 }
 
 .solvedTile {
-  background: magenta;
+  background: #61dafb;
   color: black;
 }
 

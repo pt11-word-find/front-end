@@ -1,28 +1,29 @@
 import React, { useState, useContext, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import Puzzle from "./Puzzle";
 import "../App.scss"
 import WordContext from "../contexts/WordContext"
+import { Link } from "react-router-dom";
 
 const PuzzleList=()=>{
-    const {puzzle, setPuzzle}= useContext(WordContext);
+    const { puzzles, setPuzzles }= useContext(WordContext);
 
     useEffect(() =>{
-    axiosWithAuth()
-    .get("/wordLists")
-    .then (response =>{
-      console.log(response)
-      setPuzzle(response.data)
-    })
-  }, [setPuzzle])
+      axiosWithAuth()
+        .get("/wordlists")
+        .then (response =>{
+          console.log(response)
+        setPuzzles(response.data)
+        })
+    }, [])
+
+
 
   return(
     <>
-    {puzzle.map(item=>{
-        return <div>{item.title}</div>})}
-        <button type = "submit" >
-          Get Puzzles</button>
-          </> 
+    {puzzles.map(item => {
+      return <div><Link to={`/puzzles/${item.id}`}>{item.title}</Link></div>})}   
+    </> 
+    
   )
 
 }

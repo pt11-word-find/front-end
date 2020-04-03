@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import Puzzle from "./Puzzle";
 import WordContext from "../contexts/WordContext";
+
 const AddWordList = (props) => {
   const [wordList, setWordList] = useState({
     title: "",
@@ -9,14 +10,12 @@ const AddWordList = (props) => {
 
   })
   const {puzzle, setPuzzle} = useContext(WordContext)
-
+  const [err, setError] = useState("")
 
   const handleChange = event => {
     setWordList({ ...wordList, [event.target.name]: event.target.value });
     };
 
-
-  
   const submitForm = event => {
     event.preventDefault();
     axiosWithAuth()
@@ -28,9 +27,17 @@ const AddWordList = (props) => {
           wordlist: "",
        
         })
-        props.history.push("/addWords")
+        props.history.push("/puzzles")
       })
-      .catch(err => console.log("Error in AddWordList", err))
+      .catch(err => {
+        if (err.response) {
+          if (err.response.status === 401) {
+            setError("Your session has expired, please log in again")
+          } else if (err.response.status === 400) {
+            setError("Please provide a title and word list")
+          }
+        }
+      })
     };
 
     return (
@@ -52,11 +59,11 @@ const AddWordList = (props) => {
             value={wordList.wordlist}
             onChange={handleChange}
             />
-
+        <p style={{color: "red", marginTop: "10px"}}>{err}</p>
         <button type="submit">Create Puzzle</button>
         
       </form>
-      <Puzzle />
+     
       </>
     )
 }

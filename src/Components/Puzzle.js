@@ -1,21 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import wordSearch from "../utils/wordSearch-generator";
-import AddWordList from "../Components/AddWordList"
 import arrayIncluded from "../utils/arrayIncluded";
 import arrayEqual from "../utils/arrayEqual";
 import stars from "../images/stars.svg";
+import inLine from "../utils/inLine";
+import WordContext from "../contexts/WordContext";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-const Puzzle = () => {
+const Puzzle = (props) => {
     
+    const {puzzles, setPuzzles} = useContext(WordContext)
     const [puzzle, setPuzzle] = useState([[]])
     const [selectLetter, setSelectLetter] = useState([])
     const [solved, setSolved] = useState([])
     const [wordlist, setWordlist] = useState([
-        "eggs",
-        "sugar",
-        "butter",
-        "flour",
-        "vanilla"
+        // "eggs",
+        // "sugar",
+        // "butter",
+        // "flour",
+        // "vanilla"
     ].map(item => {
         return {
             word: item,
@@ -24,13 +29,25 @@ const Puzzle = () => {
     }))
 
     useEffect(() => {
-        if (wordlist.length > 1) {
-        setPuzzle(wordSearch(wordlist.map(item => item.word.toUpperCase()), 10, 10, 1))
-        }
+        axios
+            .get(`https://wordlist-backend.herokuapp.com/wordlists/${props.match.params.id}`)
+            .then(response => {
+                console.log(response)
+                let words = response.data.wordlist.split(",").map(item => {
+                    return {
+                        word: item,
+                        solved: false
+                    }
+                })
+                setWordlist(words)
+                console.log("words", words)
+                setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), 15, 15, 1))
+            })
+            .catch(err => {
+                console.log("Error: ", err)
+            })
     }, [])
     
-
-
     // When letters in the array are 'Matched' to a wordlist word - change letter background colors,
     // *add to solved array*, cross word from the list or remove word from the list.
     useEffect(() => {
@@ -39,7 +56,7 @@ const Puzzle = () => {
         console.log("Solved array", solved)
         
         wordlist.map(item => {
-            if (arrayEqual(sortedSelect, item.word.toUpperCase().split("").sort())) { 
+            if (arrayEqual(sortedSelect, item.word.toUpperCase().split(" ").join("").split("").sort())) { 
                 setWordlist([
                     ...wordlist.filter(oldWord => oldWord.word !== item.word), {
                         word: item.word,
@@ -51,8 +68,8 @@ const Puzzle = () => {
 
             }
 
-    }, [selectLetter])
-})
+        }, [selectLetter])
+    })
 
     // tile = [row, col]
     // selectLetter is an array
@@ -61,22 +78,48 @@ const Puzzle = () => {
     // if selectLetter does not contain tile, add tile to the array, color letter to indicate it's in the array.
     
     const toggleLetter = (r_index, c_index) => {
+        if (wordlist.length === wordlist.filter(item => item.solved).length) return
         if (arrayIncluded(selectLetter, [r_index, c_index])) {
             setSelectLetter(selectLetter.filter(item => !arrayEqual(item, [r_index, c_index])))
         } else {
+            if (inLine(selectLetter, [r_index, c_index], puzzle)) {
             setSelectLetter([...selectLetter, [r_index, c_index]])
+            } else {
+                setSelectLetter([[r_index, c_index]])
+            }
             console.log("select letter", selectLetter)
         }
     }
 
+    const handleDelete = puzzle => {
+        console.log("Props: ", puzzle)
+        axiosWithAuth()
+          .delete(`/wordlists/${props.match.params.id}`)
+          .then(response => {
+            console.log("Response Data: ", response.data)
+            setPuzzles(puzzles.filter(item => item.id !== puzzle.id))
+            props.history.push("/puzzles")
+          })
+          .catch(err => console.log("Error in Delete Function: ", err))
+        }
+
     return (
         <div className="container">
         <div className="puzzle">
-            {(wordlist.length === wordlist.filter(item => item.solved).length) ? (<img src={stars}></img>) : ""
-                // console.log("Solved", solved)
-                // console.log("wordlist", wordlist)
-                // console.log("Winner")
+            {(wordlist.length > 0 && wordlist.length === wordlist.filter(item => item.solved).length) 
+            ? 
+            (
+                <div>
+                    <img src={stars} alt="star graphic"></img>
+                    <br />
+                    <Link to="/puzzles"><button type="submit" className="bt1">New Puzzle</button></Link>
+                    <button type="submit" className="bt1" onClick={() => handleDelete(puzzle)}>Delete Puzzle</button>
+                </div>
+            ) 
+            : 
+            ""
             }
+            
             <br />
             {puzzle.map((row, r_index) => 
                 <div key={r_index + row} className="row">
