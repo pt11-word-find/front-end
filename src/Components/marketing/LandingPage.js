@@ -8,7 +8,7 @@ import landingpic from "../../images/logoillustration.png"
 const LandingPage = () => {
   return (
     <div className="landing-page">
-    <h1>Word Surge: For Puzzle People</h1>
+    <h1>Word Surge: Puzzles to the People!</h1>
     <div className="cta-container">
       <div className="cta">
         <Link to="/puzzles"><button>Play Now!</button></Link>
