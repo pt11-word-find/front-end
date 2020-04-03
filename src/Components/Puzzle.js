@@ -10,6 +10,7 @@ import axios from "axios";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Puzzle = (props) => {
+    
     const {puzzles, setPuzzles} = useContext(WordContext)
     const [puzzle, setPuzzle] = useState([[]])
     const [selectLetter, setSelectLetter] = useState([])
@@ -34,13 +35,13 @@ const Puzzle = (props) => {
                 console.log(response)
                 let words = response.data.wordlist.split(",").map(item => {
                     return {
-                        word: item.split(" ").join(""),
+                        word: item,
                         solved: false
                     }
                 })
                 setWordlist(words)
                 console.log("words", words)
-                setPuzzle(wordSearch(words.map(item => item.word.toUpperCase()), 15, 15, 1))
+                setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), 15, 15, 1))
             })
             .catch(err => {
                 console.log("Error: ", err)
@@ -55,7 +56,7 @@ const Puzzle = (props) => {
         console.log("Solved array", solved)
         
         wordlist.map(item => {
-            if (arrayEqual(sortedSelect, item.word.toUpperCase().split("").sort())) { 
+            if (arrayEqual(sortedSelect, item.word.toUpperCase().split(" ").join("").split("").sort())) { 
                 setWordlist([
                     ...wordlist.filter(oldWord => oldWord.word !== item.word), {
                         word: item.word,
@@ -90,13 +91,14 @@ const Puzzle = (props) => {
         }
     }
 
-    const handleDelete = puzzles => {
-        console.log("Props: ", puzzles)
+    const handleDelete = puzzle => {
+        console.log("Props: ", puzzle)
         axiosWithAuth()
-          .delete(`/auth/wordlists/${puzzles.id}`)
+          .delete(`/wordlists/${props.match.params.id}`)
           .then(response => {
             console.log("Response Data: ", response.data)
-            setPuzzles(puzzles.filter(item => item.id !== puzzles.id))
+            setPuzzles(puzzles.filter(item => item.id !== puzzle.id))
+            props.history.push("/puzzles")
           })
           .catch(err => console.log("Error in Delete Function: ", err))
         }
@@ -104,14 +106,14 @@ const Puzzle = (props) => {
     return (
         <div className="container">
         <div className="puzzle">
-            {(wordlist.length === wordlist.filter(item => item.solved).length) 
+            {(wordlist.length > 0 && wordlist.length === wordlist.filter(item => item.solved).length) 
             ? 
             (
                 <div>
                     <img src={stars} alt="star graphic"></img>
                     <br />
                     <Link to="/puzzles"><button type="submit" className="bt1">New Puzzle</button></Link>
-                    <Link to="/puzzles"><button type="submit" className="bt1" onClick={() => handleDelete(puzzles)}>Delete Puzzle</button></Link>
+                    <button type="submit" className="bt1" onClick={() => handleDelete(puzzle)}>Delete Puzzle</button>
                 </div>
             ) 
             : 
