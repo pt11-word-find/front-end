@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import wordSearch from "../utils/wordSearch-generator";
-import AddWordList from "../Components/AddWordList"
 import arrayIncluded from "../utils/arrayIncluded";
 import arrayEqual from "../utils/arrayEqual";
 import stars from "../images/stars.svg";
+import PuzzleList from "./PuzzleList";
 
 const Puzzle = () => {
     
