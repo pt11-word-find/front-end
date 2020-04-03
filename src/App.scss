@@ -84,8 +84,8 @@
   text-decoration: none;
 }
 .footer {
-  position: absolute;
-  width: 100%;
+  position: fixed;
+  width: 100vw;
   bottom: 0;
   height: 1rem;
   text-align: center;

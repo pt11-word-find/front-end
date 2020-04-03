@@ -18,8 +18,9 @@ const LandingPage = () => {
       <div className="landing-pic">
         <img src={landingpic} />
       </div>
-      <Footer />
+      
     </div>
+    <Footer />
     </div>
   )
 }
