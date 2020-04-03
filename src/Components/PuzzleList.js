@@ -5,23 +5,25 @@ import WordContext from "../contexts/WordContext"
 import { Link } from "react-router-dom";
 
 const PuzzleList=()=>{
-    const {puzzles, setPuzzles}= useContext(WordContext);
+    const { puzzles, setPuzzles }= useContext(WordContext);
 
     useEffect(() =>{
       axiosWithAuth()
-        .get("/wordLists")
+        .get("/wordlists")
         .then (response =>{
           console.log(response)
         setPuzzles(response.data)
         })
     }, [])
 
+
+
   return(
     <>
     {puzzles.map(item => {
-        return <Link to={`/puzzles/${item.id}`}><div>{item.title}</div></Link>})}
-          
+      return <div><Link to={`/puzzles/${item.id}`}>{item.title}</Link></div>})}   
     </> 
+    
   )
 
 }

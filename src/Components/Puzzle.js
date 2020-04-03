@@ -7,6 +7,7 @@ import inLine from "../utils/inLine";
 import WordContext from "../contexts/WordContext";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Puzzle = (props) => {
     const {puzzles, setPuzzles} = useContext(WordContext)
@@ -66,8 +67,8 @@ const Puzzle = (props) => {
 
             }
 
-    }, [selectLetter])
-})
+        }, [selectLetter])
+    })
 
     // tile = [row, col]
     // selectLetter is an array
@@ -89,6 +90,16 @@ const Puzzle = (props) => {
         }
     }
 
+    const handleDelete = puzzle => {
+        axiosWithAuth()
+          .delete(`/wordlists/${puzzle.id}`)
+          .then(response => {
+            console.log("Response Data: ", response.data)
+            setPuzzle(puzzle.filter(item => item.id !== puzzle.id))
+          })
+          .catch(err => console.log("Error in Delete Function: ", err))
+        }
+
     return (
         <div className="container">
         <div className="puzzle">
@@ -99,12 +110,13 @@ const Puzzle = (props) => {
                     <img src={stars} alt="star graphic"></img>
                     <br />
                     <Link to="/puzzles"><button type="submit" className="bt1">New Puzzle</button></Link>
-                    
+                    <Link to="/puzzles"><button type="submit" className="bt1" onClick={() => handleDelete(puzzle)}>Delete Puzzle</button></Link>
                 </div>
             ) 
             : 
             ""
             }
+            
             <br />
             {puzzle.map((row, r_index) => 
                 <div key={r_index + row} className="row">

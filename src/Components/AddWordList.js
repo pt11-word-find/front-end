@@ -16,8 +16,6 @@ const AddWordList = (props) => {
     setWordList({ ...wordList, [event.target.name]: event.target.value });
     };
 
-
-  
   const submitForm = event => {
     event.preventDefault();
     axiosWithAuth()
