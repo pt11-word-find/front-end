@@ -14,11 +14,11 @@ const Puzzle = (props) => {
     const [selectLetter, setSelectLetter] = useState([])
     const [solved, setSolved] = useState([])
     const [wordlist, setWordlist] = useState([
-        "eggs",
-        "sugar",
-        "butter",
-        "flour",
-        "vanilla"
+        // "eggs",
+        // "sugar",
+        // "butter",
+        // "flour",
+        // "vanilla"
     ].map(item => {
         return {
             word: item,
