@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import ReactGA from "react-ga";
+
 import WordContext from "./contexts/WordContext";
+
 import LandingPage from "./Components/marketing/LandingPage.js";
 import AboutPage from "./Components/marketing/AboutPage.js";
 import Register from "./Components/Register.js";
@@ -9,14 +12,27 @@ import ProtectedRoute from "./ProtectedRoute.js";
 import Navigation from "./Components/navs/Navigation.js";
 import AddWordList from "./Components/AddWordList.js";
 import Puzzle from "./Components/Puzzle";
+
 import './App.scss';
 
+function initializeAnalytics() {
+  ReactGA.initialize('UA-156199574-3');
+  ReactGA.pageview("/");
+}
+
 function App() {
-  const [events, setEvents] = useState([]);
+  const [puzzle, setPuzzle] = useState([[]]);
+
+  useEffect( _ => {
+    initializeAnalytics();
+    ReactGA.event({ category: 'App', 
+    action: 'Loaded app' });
+  }, [])
+
 
   return (
     <Router>
-      <WordContext.Provider value={{ events, setEvents }}>
+      <WordContext.Provider value={{ puzzle, setPuzzle }}>
         <div className="App">
           <Navigation />
           <div className="Title">

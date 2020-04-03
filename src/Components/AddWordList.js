@@ -10,9 +10,12 @@ const AddWordList = (props) => {
   })
   const {puzzle, setPuzzle} = useContext(WordContext)
 
+
   const handleChange = event => {
     setWordList({ ...wordList, [event.target.name]: event.target.value });
     };
+
+
   
   const submitForm = event => {
     event.preventDefault();
@@ -22,7 +25,8 @@ const AddWordList = (props) => {
         console.log("post response", response)
         setWordList({
           title: "",
-          wordlist: ""
+          wordlist: "",
+       
         })
         props.history.push("/addWords")
       })
