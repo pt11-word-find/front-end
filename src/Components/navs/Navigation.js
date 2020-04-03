@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Route } from "react-router-dom";
+import { NavLink, Link, Route } from "react-router-dom";
 import WordSurge from "../../images/WordSurge.png";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
@@ -39,7 +39,7 @@ export function Navigation() {
         <div className="navbar-header">
           <h1 className="navbar-brand" to={"/"}>
           </h1>
-          <img src={WordSurge} alt="logo" />
+          <Link to="/"><img src={WordSurge} alt="logo" /></Link>
         </div>
         <Links className="nav navbar-nav">
           <HeaderLink>
