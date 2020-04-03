@@ -21,7 +21,7 @@ function initializeAnalytics() {
 }
 
 function App() {
-  const [events, setEvents] = useState([]);
+  const [puzzle, setPuzzle] = useState([[]]);
 
   useEffect( _ => {
     initializeAnalytics();
@@ -32,7 +32,7 @@ function App() {
 
   return (
     <Router>
-      <WordContext.Provider value={{ events, setEvents }}>
+      <WordContext.Provider value={{ puzzle, setPuzzle }}>
         <div className="App">
           <Navigation />
           <div className="Title">
