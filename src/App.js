@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ReactGA from "react-ga";
-
 import WordContext from "./contexts/WordContext";
-
 import LandingPage from "./Components/marketing/LandingPage.js";
 import AboutPage from "./Components/marketing/AboutPage.js";
 import Register from "./Components/Register.js";
@@ -11,8 +9,8 @@ import Login from "./Components/Login.js";
 import ProtectedRoute from "./ProtectedRoute.js";
 import Navigation from "./Components/navs/Navigation.js";
 import AddWordList from "./Components/AddWordList.js";
+import PuzzleList from "./Components/PuzzleList";
 import Puzzle from "./Components/Puzzle";
-
 import './App.scss';
 
 function initializeAnalytics() {
@@ -21,7 +19,7 @@ function initializeAnalytics() {
 }
 
 function App() {
-  const [puzzle, setPuzzle] = useState([[]]);
+  const [puzzles, setPuzzles] = useState([[]]);
 
   useEffect( _ => {
     initializeAnalytics();
@@ -32,7 +30,7 @@ function App() {
 
   return (
     <Router>
-      <WordContext.Provider value={{ puzzle, setPuzzle }}>
+      <WordContext.Provider value={{ puzzles, setPuzzles }}>
         <div className="App">
           <Navigation />
           <div className="Title">
@@ -42,6 +40,8 @@ function App() {
             <Route path="/about" component={AboutPage} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
+            <Route exact path="/puzzles" component={PuzzleList} />
+            <Route path="/puzzles/:id" component={Puzzle} />
           </div>
         </div>
       </WordContext.Provider>

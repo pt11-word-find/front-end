@@ -17,41 +17,9 @@
   margin-top: 10px;
   font-size: 1.5rem;
   background-color: #ffeee2;
-  border-radius: 0px 0px 8px 8px;
+  border-radius: 8px;
 }
 
-
-// @media {
-//   .puzzle{width: 100%;}
-//   .nav-links {
-//     font-size: 0.8rem;
-//     color:  #30071f;
-//     background-color: #c067b1;}
-// }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .text_area1{
   width: 200px;
   height: 30px;
@@ -66,16 +34,27 @@
 }
 .nav-links {
   font-size: 1.2rem;
-  color:  #30071f;
-  background-color: #c067b1;
+  color:  #2C666E;
+  background-color: #e3e5e4;
   border-radius: 8px;
   padding: 5px;
   text-decoration: none;
+  border: 1px black solid;
+}
+.play-now {
+  color: #2C666E;
+  background-color: white;
+  border: 1px black solid;
+}
+.nav-links:hover {
+  color: #2C666E;
+  background-color: white;
+  text-decoration: none;
 }
 .footer {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
+  // position: fixed;
+  width: 100vw;
+  // bottom: 10px;
   height: 1rem;
   text-align: center;
 }
@@ -130,7 +109,7 @@ text-area {
 }
 
 .solvedTile {
-  background: magenta;
+  background: #61dafb;
   color: black;
 }
 
