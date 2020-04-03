@@ -7,14 +7,14 @@ import Logout from "../Logout";
 
 const Header = styled.div`
   background: #2c666e;
-  height: 15rem;
+  height: 4rem;
 `;
 
 const Links = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 40%;
+  width: 60%;
 
 `;
 
@@ -37,8 +37,6 @@ export function Navigation() {
     <Header className="navbar navbar-default">
       <div className="container-fluid">
         <div className="navbar-header">
-          <h1 className="navbar-brand" to={"/"}>
-          </h1>
           <Link to="/"><img src={WordSurge} alt="logo" /></Link>
         </div>
         <Links className="nav navbar-nav">
