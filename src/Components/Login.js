@@ -3,6 +3,7 @@ import axios from "axios";
 import { Navbar, NavbarBrand, Button } from 'reactstrap';
 import { useHitsory } from 'react-router-dom';
 import styled from "styled-components";
+import WordContext from "../contexts/WordContext"
 
 const Title = styled.h2`
   color: darkgray;
@@ -15,7 +16,7 @@ Baby Blue: #90ddf0
 */
 
 const Login = (props) => {
-
+  const {setLoggedIn} = React.useContext(WordContext)
   const [log, setLog] = useState({
     username: "",
     password: "",
@@ -37,8 +38,8 @@ const Login = (props) => {
     axios
     .post ('https://wordlist-backend.herokuapp.com/auth/login', log)
     .then( res => {
-      console.log(res)
-      localStorage.setItem("token", res.data.token)
+      localStorage.setItem("token", res.data.token);
+      setLoggedIn(true);
       props.history.push( "/addWords")})
     .catch( err => {
         console.log (err)

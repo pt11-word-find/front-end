@@ -24,6 +24,7 @@ function initializeAnalytics() {
 
 function App() {
   const [puzzles, setPuzzles] = useState([[]]);
+  const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("token")))
 
   useEffect( _ => {
     initializeAnalytics();
@@ -34,7 +35,7 @@ function App() {
 
   return (
     <Router>
-      <WordContext.Provider value={{ puzzles, setPuzzles }}>
+      <WordContext.Provider value={{ puzzles, setPuzzles, loggedIn, setLoggedIn }}>
         <div className="App">
           <Navigation />
           <div className="Title">
