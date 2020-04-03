@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import wordSearch from "../utils/wordSearch-generator";
 import arrayIncluded from "../utils/arrayIncluded";
 import arrayEqual from "../utils/arrayEqual";
 import stars from "../images/stars.svg";
-import PuzzleList from "./PuzzleList";
+import inLine from "../utils/inLine";
+import WordContext from "../contexts/WordContext";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-const Puzzle = () => {
-    
+const Puzzle = (props) => {
+    const {puzzles, setPuzzles} = useContext(WordContext)
     const [puzzle, setPuzzle] = useState([[]])
     const [selectLetter, setSelectLetter] = useState([])
     const [solved, setSolved] = useState([])
@@ -24,13 +27,25 @@ const Puzzle = () => {
     }))
 
     useEffect(() => {
-        if (wordlist.length > 1) {
-        setPuzzle(wordSearch(wordlist.map(item => item.word.toUpperCase()), 10, 10, 1))
-        }
+        axios
+            .get(`https://wordlist-backend.herokuapp.com/wordlists/${props.match.params.id}`)
+            .then(response => {
+                console.log(response)
+                let words = response.data.wordlist.split(",").map(item => {
+                    return {
+                        word: item.split(" ").join(""),
+                        solved: false
+                    }
+                })
+                setWordlist(words)
+                console.log("words", words)
+                setPuzzle(wordSearch(words.map(item => item.word.toUpperCase()), 15, 15, 1))
+            })
+            .catch(err => {
+                console.log("Error: ", err)
+            })
     }, [])
     
-
-
     // When letters in the array are 'Matched' to a wordlist word - change letter background colors,
     // *add to solved array*, cross word from the list or remove word from the list.
     useEffect(() => {
@@ -65,7 +80,11 @@ const Puzzle = () => {
         if (arrayIncluded(selectLetter, [r_index, c_index])) {
             setSelectLetter(selectLetter.filter(item => !arrayEqual(item, [r_index, c_index])))
         } else {
+            if (inLine(selectLetter, [r_index, c_index], puzzle)) {
             setSelectLetter([...selectLetter, [r_index, c_index]])
+            } else {
+                setSelectLetter([[r_index, c_index]])
+            }
             console.log("select letter", selectLetter)
         }
     }
@@ -79,7 +98,7 @@ const Puzzle = () => {
                 <div>
                     <img src={stars} alt="star graphic"></img>
                     <br />
-                    <button type="submit" className="bt1">New Puzzle</button>
+                    <Link to="/puzzles"><button type="submit" className="bt1">New Puzzle</button></Link>
                     
                 </div>
             ) 
