@@ -1,21 +1,13 @@
 import React from "react";
 import { NavLink, Route } from "react-router-dom";
-import WordSurge from "../images/WordSurge.png";
+import WordSurge from "../../images/WordSurge.png";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
 const Header = styled.div`
   background: #2c666e;
-  height: 19rem;
-  margin: 20px;
-  border-radius: 8px;
+  height: 15rem;
 `;
-
-/*
-Dark Green: #073c3f
-Green Blue color: #2c666e
-Powder blue: #90ddf0
-*/
 
 const Links = styled.div`
   display: flex;
@@ -26,6 +18,12 @@ const Links = styled.div`
 `;
 
 const HeaderLink = styled.h4``;
+
+/*
+Rich Black Green: #073c3f
+Myrtle Green: #2c666e
+Baby Blue: #90ddf0
+*/
 
 export function Navigation() {
   const history = useHistory();
@@ -39,12 +37,6 @@ export function Navigation() {
       <div className="container-fluid">
         <div className="navbar-header">
           <h1 className="navbar-brand" to={"/"}>
-            <a 
-              href=""
-              style={{ textDecoration: "underline overline", 
-              color: "black" }}>
-              Word Surge  
-              </a>
           </h1>
           <img src={WordSurge} alt="logo" />
         </div>
@@ -55,21 +47,18 @@ export function Navigation() {
             </NavLink>{" "}
           </HeaderLink>
           <HeaderLink>
-            <NavLink className="nav-links" to={"/"}>
+            <NavLink className="nav-links" to={"/login"}>
               Log In
-            </NavLink>
-          </HeaderLink>
-          <HeaderLink>
-            <NavLink 
-              className="nav-links" 
-              to={"/logout"}>
-              {/* onClick={handleLogout}> */}
-              Log Out
             </NavLink>
           </HeaderLink>
           <HeaderLink>
             <NavLink className="nav-links" to={"/addWords"}>
               Add Words
+            </NavLink>
+          </HeaderLink>
+          <HeaderLink>
+            <NavLink className="nav-links" to={"/about"}>
+              About Us
             </NavLink>
           </HeaderLink>
           <HeaderLink>
