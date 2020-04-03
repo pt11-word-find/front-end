@@ -9,7 +9,7 @@ const LandingPage = () => {
   return (
     <div className="landing-page">
     <h1>Word Surge: Puzzles to the People!</h1>
-    <div className="cta-container">
+    <div data-aos="fade-down" data-aos-duration="1000" className="cta-container">
       <div className="cta">
         <Link to="/puzzles"><button>Play Now!</button></Link>
         <hr />
