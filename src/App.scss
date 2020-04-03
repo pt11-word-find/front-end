@@ -71,6 +71,17 @@
   border-radius: 8px;
   padding: 5px;
   text-decoration: none;
+  border: 1px black solid;
+}
+.play-now {
+  color: #2C666E;
+  background-color: white;
+  border: 1px black solid;
+}
+.nav-links:hover {
+  color: #2C666E;
+  background-color: white;
+  text-decoration: none;
 }
 .footer {
   position: absolute;

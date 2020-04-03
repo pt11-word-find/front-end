@@ -42,6 +42,11 @@ export function Navigation() {
         </div>
         <Links className="nav navbar-nav">
           <HeaderLink>
+            <NavLink className="nav-links play-now" to={"/puzzles"}>
+              Play Now!
+            </NavLink>
+          </HeaderLink> 
+          <HeaderLink>
             <NavLink className="nav-links" to={"/register"}>
               Register
             </NavLink>{" "}
