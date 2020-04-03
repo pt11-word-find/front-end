@@ -43,19 +43,7 @@ export function Navigation() {
               Play Now!
             </NavLink>
           </HeaderLink> 
-          { loggedIn ? 
-          <HeaderLink>
-            <NavLink className="nav-links" to={"/addWords"}>
-              Add Words
-            </NavLink>
-          </HeaderLink>
-          : null}
-          <HeaderLink>
-            <NavLink className="nav-links" to={"/about"}>
-              About Us
-            </NavLink>
-          </HeaderLink>
-          
+        
           {!loggedIn
           ?
           <>
@@ -70,10 +58,22 @@ export function Navigation() {
             </NavLink>
           </HeaderLink>
           </>
-          : <HeaderLink>
+          : 
+          <>
+        <HeaderLink>
+          <NavLink className="nav-links" to={"/addWords"}>
+            Create Puzzle
+          </NavLink>
+        </HeaderLink>
+        <HeaderLink>
           <Logout />
-        </HeaderLink>}
-          
+        </HeaderLink>
+        </>}
+        <HeaderLink>
+            <NavLink className="nav-links" to={"/about"}>
+              About Us
+            </NavLink>
+        </HeaderLink>
         </Links>
       </div>
     </Header>

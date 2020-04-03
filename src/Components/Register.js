@@ -1,6 +1,7 @@
 import React, { useState } from "react"; 
 import styled from "styled-components";
 import axios from "axios";
+import {Link} from "react-router-dom"
 
 const FormWrapper = styled.form`
   display: flex;
@@ -46,7 +47,7 @@ const Register = (props) => {
   return (
     <FormWrapper onSubmit={handleSubmit}>
       <div className="Title">
-        <h2>Please Register</h2>
+        <h2>Please Register To Create Puzzles</h2>
 
       </div>
       <input
@@ -64,6 +65,7 @@ const Register = (props) => {
         onChange={handleChange}
       />
       <button type="submit"> Submit </button>
+      <p>Already have an account? <Link to="/login">Login here!</Link></p>
     </FormWrapper>
     
     );
