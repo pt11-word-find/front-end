@@ -61,11 +61,7 @@ export function Navigation() {
               About Us
             </NavLink>
           </HeaderLink>
-          <HeaderLink>
-            <NavLink className="nav-links" to={"/aboutus"}>
-              About Us
-            </NavLink>
-          </HeaderLink>
+     
         </Links>
       </div>
     </Header>
