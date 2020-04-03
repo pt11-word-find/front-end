@@ -5,6 +5,11 @@
         font-family: serif;
         font-weight: bold;
         color: #0A090C;
+        width: 70%;
+        margin :2% auto;
+        border-radius: 30px;;
+        padding: 5px;
+        border: 3px solid #0A090C;
     }
     .cta-container {
         display: flex;
@@ -38,6 +43,14 @@
             img {
                 max-width:100%;
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .landing-page {
+        .cta-container {
+            flex-direction:column;
         }
     }
 }
