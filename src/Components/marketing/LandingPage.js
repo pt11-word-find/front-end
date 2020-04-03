@@ -13,7 +13,7 @@ const LandingPage = () => {
       <div className="cta">
         <Link to="/puzzles"><button>Play Now!</button></Link>
         <hr />
-        <Link to="/register"><button>Create your own Word Search!</button></Link>
+        <Link to="/register"><button>Create a New Puzzle</button></Link>
       </div>
       <div className="landing-pic">
         <img src={landingpic} />
