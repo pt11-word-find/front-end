@@ -77,6 +77,9 @@ const Puzzle = () => {
             (
                 <div>
                     <img src={stars} alt="star graphic"></img>
+                    <br />
+                    <button type="submit" className="bt1">New Puzzle</button>
+                    
                 </div>
             ) 
             : 
