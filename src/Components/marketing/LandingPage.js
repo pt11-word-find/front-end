@@ -23,11 +23,11 @@ const LandingPage = () => {
 						</h5>
           </span>
           <br/>
-          <div>
+          {/* <div>
             <Link to='/about'>
               <Button color='warning'>About Us</Button>
             </Link>
-          </div>
+          </div> */}
         </section>
         <section className='landing-container-cards'>
           <span className='landing-card-row'>

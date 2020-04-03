@@ -3,6 +3,7 @@ import { NavLink, Route } from "react-router-dom";
 import WordSurge from "../../images/WordSurge.png";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import Logout from "../Logout";
 
 const Header = styled.div`
   background: #2c666e;
@@ -66,11 +67,11 @@ export function Navigation() {
               About Us
             </NavLink>
           </HeaderLink>
-          {/* <HeaderLink>
-            <NavLink className="nav-links" to={"/aboutus"}>
-              About Us
+          <HeaderLink>
+            <NavLink className="nav-links" to={"/"}>
+              Logout
             </NavLink>
-          </HeaderLink> */}
+          </HeaderLink>
         </Links>
       </div>
     </Header>
