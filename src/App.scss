@@ -151,3 +151,17 @@ text-area {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
+
+.puzzle-list {
+  display:flex;
+  flex-wrap: wrap;
+  margin: 1% auto;
+  justify-content: center;
+  a {
+    border: 1px solid black;
+    width: 300px;
+    padding: 1%;
+    margin: 1%;
+
+  }
+}
