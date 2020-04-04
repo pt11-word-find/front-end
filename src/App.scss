@@ -68,11 +68,13 @@
 .container {
   display: flex;
   justify-content: center;
+  align-items:center;
 }
 .puzzle {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  align-items: flex-end;
+  width: 70%;
   padding: 1%;
   user-select: none;
 }
@@ -80,7 +82,6 @@
 .row {
   align-items: center;
   display: flex;
-  width: 100%;
 }
 .tile {
   display: inline-block;
@@ -107,7 +108,8 @@ text-area {
 .word-list {
   text-align: left;
   width: 20%;
-  padding-left: 50px;
+  padding-top: 1%;
+  padding-left: 30px;
 }
 
 .selectedTile {
