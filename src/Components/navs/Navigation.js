@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link, Route } from "react-router-dom";
-import WordSurge from "../../images/puzzle.svg";
+import WordSurge from "../../images/puzzle_2.svg";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import Logout from "../Logout";
