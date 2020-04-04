@@ -9,6 +9,7 @@ import WordContext from "../../contexts/WordContext";
 const Header = styled.div`
   background: #2c666e;
   height: 4rem;
+  padding-top: 2px;
 `;
 
 const Links = styled.div`
