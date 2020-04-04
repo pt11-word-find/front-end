@@ -8,6 +8,7 @@ import WordContext from "../contexts/WordContext";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import AOS from "aos"
 
 const Puzzle = (props) => {
     const fonts = ["bookman", "comicsans", "impact", "default-font", "lucida"]
@@ -109,7 +110,7 @@ const Puzzle = (props) => {
         }
 
     return (
-        <div className="container">
+        <div data-aos="fade-up" className="container">
         <div className={`puzzle ${fonts[font]}`}>
             {(wordlist.length > 0 && wordlist.length === wordlist.filter(item => item.solved).length) 
             ? 
@@ -146,7 +147,7 @@ const Puzzle = (props) => {
             <p className={word.solved ? "crossedOut" : ""}>{word.word}</p>
             
             )}
-            <button onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button>
+            {wordlist.length > 0 ? <button onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button> : null }
         </div>
     </div>
     )
