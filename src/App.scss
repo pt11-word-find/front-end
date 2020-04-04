@@ -36,6 +36,7 @@
 .navbar-header {
   img {
     width:4rem;
+    margin-left: 15px;
   }
 }
 
@@ -44,19 +45,24 @@
 }
 
 .nav-links {
+  display: flex;
+  align-items: center;
+  height: 100%;
   font-size: 1.2rem;
-  color:  #2C666E;
-  background-color: #e3e5e4;
-  border-radius: 8px;
-  padding: 5px;
+  color: #e3e5e4;
   text-decoration: none;
-  border: 1px black solid;
+  // color:  #2C666E;
+  // background-color: #e3e5e4;
+  // border-radius: 8px;
+  padding: 10px;
+  // border: 1px black solid;
 }
 .play-now {
   color: #2C666E;
   background-color: white;
-  border: 1px black solid;
+  // border: 1px black solid;
 }
+
 .nav-links:hover {
   color: #2C666E;
   background-color: white;
@@ -114,9 +120,7 @@
   margin: 0 auto;
   text-align: left;
 }
-text-area {
-  height: 800px;
-}
+
 .word-list {
   text-align: left;
   width: 20%;
