@@ -23,7 +23,7 @@ function initializeAnalytics() {
 }
 
 function App() {
-  const [puzzles, setPuzzles] = useState([[]]);
+  const [puzzles, setPuzzles] = useState([]);
   const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("token")))
 
   useEffect( _ => {
