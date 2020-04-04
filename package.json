@@ -19,6 +19,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "reactstrap": "^8.4.1",
+    "sass": "^1.26.3",
     "styled-components": "^5.0.1"
   },
   "scripts": {
