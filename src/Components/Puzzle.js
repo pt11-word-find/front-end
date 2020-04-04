@@ -10,11 +10,12 @@ import axios from "axios";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Puzzle = (props) => {
-    
+    const fonts = ["bookman", "comicsans", "impact", "default-font", "lucida"]
     const {puzzles, setPuzzles} = useContext(WordContext)
     const [puzzle, setPuzzle] = useState([[]])
     const [selectLetter, setSelectLetter] = useState([])
     const [solved, setSolved] = useState([])
+    const [font, setFont] = useState(3)
     const [wordlist, setWordlist] = useState([
         // "eggs",
         // "sugar",
@@ -105,7 +106,7 @@ const Puzzle = (props) => {
 
     return (
         <div className="container">
-        <div className="puzzle">
+        <div className={`puzzle ${fonts[font]}`}>
             {(wordlist.length > 0 && wordlist.length === wordlist.filter(item => item.solved).length) 
             ? 
             (
@@ -141,6 +142,7 @@ const Puzzle = (props) => {
             <p className={word.solved ? "crossedOut" : ""}>{word.word}</p>
             
             )}
+            <button onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button>
         </div>
     </div>
     )
