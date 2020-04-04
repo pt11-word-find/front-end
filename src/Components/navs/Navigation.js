@@ -7,7 +7,7 @@ import Logout from "../Logout";
 
 const Header = styled.div`
   background: #2c666e;
-  height: 15rem;
+  /* height: 15rem; */
 `;
 
 const Links = styled.div`
@@ -59,7 +59,7 @@ export function Navigation() {
           </HeaderLink>
           <HeaderLink>
             <NavLink className="nav-links" to={"/addWords"}>
-              Add Words
+              Create Puzzle
             </NavLink>
           </HeaderLink>
           <HeaderLink>
