@@ -11,7 +11,6 @@ const PuzzleList=()=>{
       axiosWithAuth()
         .get("/wordlists")
         .then (response =>{
-          console.log(response)
         setPuzzles(response.data)
         })
     }, [])
@@ -20,10 +19,14 @@ const PuzzleList=()=>{
 
   return(
     <>
+    <h3>Choose a puzzle:</h3>
+
+    {puzzles.length > 0 ? <div className="puzzle-list">
     {puzzles.map(item => {
-      return <div><Link to={`/puzzles/${item.id}`}>{item.title}</Link></div>})}   
-    </> 
-    
+      return <Link to={`/puzzles/${item.id}`}><div className="puzzle-link">{item.title}</div></Link>})}   
+    </div> 
+    : <h3>Loading ...</h3>}
+    </>
   )
 
 }

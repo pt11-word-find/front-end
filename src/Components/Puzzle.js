@@ -8,20 +8,16 @@ import WordContext from "../contexts/WordContext";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import AOS from "aos"
 
 const Puzzle = (props) => {
-    
+    const fonts = ["bookman", "comicsans", "impact", "default-font", "lucida"]
     const {puzzles, setPuzzles} = useContext(WordContext)
     const [puzzle, setPuzzle] = useState([[]])
     const [selectLetter, setSelectLetter] = useState([])
     const [solved, setSolved] = useState([])
-    const [wordlist, setWordlist] = useState([
-        // "eggs",
-        // "sugar",
-        // "butter",
-        // "flour",
-        // "vanilla"
-    ].map(item => {
+    const [font, setFont] = useState(3)
+    const [wordlist, setWordlist] = useState([].map(item => {
         return {
             word: item,
             solved: false
@@ -40,8 +36,12 @@ const Puzzle = (props) => {
                     }
                 })
                 setWordlist(words)
-                console.log("words", words)
-                setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), 15, 15, 1))
+                console.log("words", words.sort((a,b) => a.length - b.length))
+                let longest = words.sort((a,b) => a.length - b.length)[0].word.length;
+                console.log("longest", longest)
+                longest = longest > 15 ? longest : 15;
+                console.log("longest", longest)
+                setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest+ 1, 1))
             })
             .catch(err => {
                 console.log("Error: ", err)
@@ -104,12 +104,12 @@ const Puzzle = (props) => {
         }
 
     return (
-        <div className="container">
-        <div className="puzzle">
+        <div data-aos="fade-up" className="container">
+        <div className={`puzzle ${fonts[font]}`}>
             {(wordlist.length > 0 && wordlist.length === wordlist.filter(item => item.solved).length) 
             ? 
             (
-                <div>
+                <div className="win-box">
                     <img src={stars} alt="star graphic"></img>
                     <br />
                     <Link to="/puzzles"><button type="submit" className="bt1">New Puzzle</button></Link>
@@ -124,7 +124,7 @@ const Puzzle = (props) => {
             {puzzle.map((row, r_index) => 
                 <div key={r_index + row} className="row">
                     {row.map((tile, c_index) => 
-                        <div key={c_index + tile} className={arrayIncluded(selectLetter, [r_index, c_index]) 
+                        <div key={c_index + tile} style={{width: row.length > 20 ? `${100/row.length}%`: "25px"}} className={arrayIncluded(selectLetter, [r_index, c_index]) 
                             ? "selectedTile tile" 
                             : arrayIncluded(solved, [r_index, c_index])
                                 ? "solvedTile tile"
@@ -141,6 +141,7 @@ const Puzzle = (props) => {
             <p className={word.solved ? "crossedOut" : ""}>{word.word}</p>
             
             )}
+            {wordlist.length > 0 ? <button onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button> : null }
         </div>
     </div>
     )

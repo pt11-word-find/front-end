@@ -40,13 +40,13 @@ export function Navigation() {
         <Links className="nav navbar-nav">
           <HeaderLink>
             <NavLink className="nav-links play-now" to={"/puzzles"}>
-              Play Now!
+              Puzzles
             </NavLink>
           </HeaderLink> 
           { loggedIn ? 
           <HeaderLink>
             <NavLink className="nav-links" to={"/addWords"}>
-              Create Puzzle
+              Create
             </NavLink>
           </HeaderLink>
           : null}
