@@ -17,13 +17,7 @@ const Puzzle = (props) => {
     const [selectLetter, setSelectLetter] = useState([])
     const [solved, setSolved] = useState([])
     const [font, setFont] = useState(3)
-    const [wordlist, setWordlist] = useState([
-        // "eggs",
-        // "sugar",
-        // "butter",
-        // "flour",
-        // "vanilla"
-    ].map(item => {
+    const [wordlist, setWordlist] = useState([].map(item => {
         return {
             word: item,
             solved: false
@@ -115,7 +109,7 @@ const Puzzle = (props) => {
             {(wordlist.length > 0 && wordlist.length === wordlist.filter(item => item.solved).length) 
             ? 
             (
-                <div>
+                <div className="win-box">
                     <img src={stars} alt="star graphic"></img>
                     <br />
                     <Link to="/puzzles"><button type="submit" className="bt1">New Puzzle</button></Link>
@@ -130,7 +124,7 @@ const Puzzle = (props) => {
             {puzzle.map((row, r_index) => 
                 <div key={r_index + row} className="row">
                     {row.map((tile, c_index) => 
-                        <div key={c_index + tile} className={arrayIncluded(selectLetter, [r_index, c_index]) 
+                        <div key={c_index + tile} style={{width: row.length > 20 ? `${100/row.length}%`: "25px"}} className={arrayIncluded(selectLetter, [r_index, c_index]) 
                             ? "selectedTile tile" 
                             : arrayIncluded(solved, [r_index, c_index])
                                 ? "solvedTile tile"
