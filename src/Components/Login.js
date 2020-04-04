@@ -3,9 +3,16 @@ import axios from "axios";
 import { Navbar, NavbarBrand, Button } from 'reactstrap';
 import { useHitsory } from 'react-router-dom';
 import styled from "styled-components";
+import WordContext from "../contexts/WordContext"
 
 const Title = styled.h2`
   color: darkgray;
+`;
+const FormWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 `;
 
 /*
@@ -15,7 +22,7 @@ Baby Blue: #90ddf0
 */
 
 const Login = (props) => {
-
+  const {setLoggedIn} = React.useContext(WordContext)
   const [log, setLog] = useState({
     username: "",
     password: "",
@@ -37,8 +44,8 @@ const Login = (props) => {
     axios
     .post ('https://wordlist-backend.herokuapp.com/auth/login', log)
     .then( res => {
-      console.log(res)
-      localStorage.setItem("token", res.data.token)
+      localStorage.setItem("token", res.data.token);
+      setLoggedIn(true);
       props.history.push( "/addWords")})
     .catch( err => {
         console.log (err)
@@ -47,8 +54,7 @@ const Login = (props) => {
 
   // Make sure to add a logout function
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+      <FormWrapper onSubmit={handleSubmit}>
         <div className="Title">
           <h2>Please Login</h2>
         </div>
@@ -67,15 +73,7 @@ const Login = (props) => {
           onChange={handleChange}
         />
         <button type="submit"> Submit </button>
-        {/* <Button
-          onClick={logout}
-          outline
-          style={{ color: "#f99c1b", border: "1px solid #f99c1b" }}
-          className="word-r2">
-          Log Out */}
-        {/* </Button> */}
-      </form>
-    </div>
+      </FormWrapper>
   );
 }
 

@@ -12,6 +12,10 @@ import AddWordList from "./Components/AddWordList.js";
 import PuzzleList from "./Components/PuzzleList";
 import Puzzle from "./Components/Puzzle";
 import './App.scss';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 
 function initializeAnalytics() {
   ReactGA.initialize('UA-156199574-3');
@@ -20,6 +24,7 @@ function initializeAnalytics() {
 
 function App() {
   const [puzzles, setPuzzles] = useState([[]]);
+  const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("token")))
 
   useEffect( _ => {
     initializeAnalytics();
@@ -30,7 +35,7 @@ function App() {
 
   return (
     <Router>
-      <WordContext.Provider value={{ puzzles, setPuzzles }}>
+      <WordContext.Provider value={{ puzzles, setPuzzles, loggedIn, setLoggedIn }}>
         <div className="App">
           <Navigation />
           <div className="Title">

@@ -4,17 +4,18 @@ import WordSurge from "../../images/WordSurge.png";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import Logout from "../Logout";
+import WordContext from "../../contexts/WordContext";
 
 const Header = styled.div`
   background: #2c666e;
-  height: 15rem;
+  height: 4rem;
 `;
 
 const Links = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 40%;
+  width: 60%;
 
 `;
 
@@ -28,17 +29,12 @@ Baby Blue: #90ddf0
 
 export function Navigation() {
   const history = useHistory();
-
-  const handleLogout = () => {
-    return localStorage.removeItem("token"), history.push("/");
-  };
+  const {loggedIn} = React.useContext(WordContext)
 
   return (
     <Header className="navbar navbar-default">
       <div className="container-fluid">
         <div className="navbar-header">
-          <h1 className="navbar-brand" to={"/"}>
-          </h1>
           <Link to="/"><img src={WordSurge} alt="logo" /></Link>
         </div>
         <Links className="nav navbar-nav">
@@ -47,31 +43,36 @@ export function Navigation() {
               Play Now!
             </NavLink>
           </HeaderLink> 
+          { loggedIn ? 
           <HeaderLink>
-            <NavLink className="nav-links" to={"/register"}>
+            <NavLink className="nav-links" to={"/addWords"}>
+              Create Puzzle
+            </NavLink>
+          </HeaderLink>
+          : null}
+          <HeaderLink>
+            <NavLink className="nav-links" to={"/about"}>
+              About
+            </NavLink>
+          </HeaderLink> 
+          {!loggedIn
+          ?
+          <>
+          <HeaderLink>
+          <NavLink className="nav-links" to={"/register"}>
               Register
-            </NavLink>{" "}
+          </NavLink>{" "}
           </HeaderLink>
           <HeaderLink>
             <NavLink className="nav-links" to={"/login"}>
               Log In
             </NavLink>
           </HeaderLink>
-          <HeaderLink>
-            <NavLink className="nav-links" to={"/addWords"}>
-              Add Words
-            </NavLink>
-          </HeaderLink>
-          <HeaderLink>
-            <NavLink className="nav-links" to={"/about"}>
-              About Us
-            </NavLink>
-          </HeaderLink>
-          <HeaderLink>
-            <NavLink className="nav-links" to={"/"}>
-              Logout
-            </NavLink>
-          </HeaderLink>
+          </>
+          : <HeaderLink>
+          <Logout />
+        </HeaderLink>}
+          
         </Links>
       </div>
     </Header>
