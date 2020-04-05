@@ -110,7 +110,7 @@ const Puzzle = (props) => {
             }
             
             <br />
-            {wordlist.length === 0 ? <h3>Loading ...</h3> : puzzle.map((row, r_index) => 
+            {wordlist.length === 0 ? <h3 className="loading">Loading ...</h3> : puzzle.map((row, r_index) => 
                 <div key={r_index + row} className="row">
                     {row.map((tile, c_index) => 
                         <div key={c_index + tile} style={{width: row.length > 20 ? `${100/row.length}%`: "25px"}} className={arrayIncluded(selectLetter, [r_index, c_index]) 
