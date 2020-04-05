@@ -34,7 +34,7 @@ export function Navigation() {
         </div>
         <Links>
           
-            <NavLink className="nav-links play-now" to={"/puzzles"}>
+            <NavLink className="nav-links" to={"/puzzles"}>
               Puzzles
             </NavLink>
            
