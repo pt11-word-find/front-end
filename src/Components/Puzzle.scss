@@ -31,16 +31,32 @@
           cursor: pointer;
         }
       }
+      // .win-box {
+      //   position: absolute;
+      //   justify-content: center;
+      //   background:white;
+      //   padding:10px;
+      //   border: 1px solid black;
+        // .manage-button {
+        //   width: 200px;
+        // }
+      // }
       .win-box {
-        position: absolute;
-        justify-content: center;
-        background:white;
-        padding:10px;
-        border: 1px solid black;
-        .manage-button{
+        border: 1px black solid;
+        position:fixed;
+        background: white;
+        padding-top: 1%;
+        width: 15%;
+        height: auto;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        .manage-button {
           width: 200px;
         }
       }
+      
+
     }
     .word-list {
       display: flex;
@@ -95,15 +111,5 @@
             transition: .6s;
         }
     }
-    // .win-box {
-    //   position: relative;
-    //   justify-content: center;
-    //   align-content: center;
-    //   background:white;
-    //   padding:10px;
-    //   border: 1px solid black;
-    //   .manage-button{
-    //     width: 200px;
-    //   }
-    // }
+
   }

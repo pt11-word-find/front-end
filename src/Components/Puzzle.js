@@ -8,6 +8,7 @@ import WordContext from "../contexts/WordContext";
 import { Link } from "react-router-dom";
 import "./Puzzle.scss";
 import axios from "axios";
+import Modal from "./Modal";
 
 const Puzzle = (props) => {
     const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
@@ -17,6 +18,7 @@ const Puzzle = (props) => {
     const [selectLetter, setSelectLetter] = useState([])
     const [solved, setSolved] = useState([])
     const [font, setFont] = useState(3)
+    const [modal, setModal] = useState(false);
     const [wordlist, setWordlist] = useState([].map(item => {
         return {
             word: item,
@@ -91,7 +93,13 @@ const Puzzle = (props) => {
         }
     }
 
+    const showModal = () => {
+        setModal(true)
+    }
 
+    const hideModal = () => {
+        setModal(false)
+    }
 
     return (
         <div data-aos="fade-up" className="container">
@@ -99,12 +107,10 @@ const Puzzle = (props) => {
             {(wordlist.length > 0 && wordlist.length === wordlist.filter(item => item.solved).length) 
             ? 
             (
-                <div className="win-box">
-                    <img src={stars} alt="star graphic"></img>
-                    <br />
-                    <Link to="/puzzles"><button type="submit" className="manage-button">Select a New Puzzle</button></Link>
-                    
-                </div>
+                
+                <Modal modal={showModal} />
+                
+
             ) 
             : 
             ""
