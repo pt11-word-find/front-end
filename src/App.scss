@@ -171,11 +171,41 @@
   flex-wrap: wrap;
   margin: 1% auto;
   justify-content: center;
-  a {
-    border: 1px solid black;
-    width: 300px;
-    padding: 1%;
-    margin: 1%;
+  padding: 1%;
+  // a {
+  //   border: 1px solid black;
+  //   width: 300px;
+  //   padding: 1%;
+  //   margin: 1%;
 
-  }
+  // }
+}
+
+.puzzle-link {
+  border: 1px solid black;
+  width: 300px;
+  padding: 1%;
+  margin: 1%;
+}
+
+.manage-button {
+    height: 40px;
+    border-radius:10px;
+    width: 100%;
+    background:#F0EDEE;
+    border: 2px solid #2c666e;
+    color: #2c666e;
+    transition: .6s;
+    &:hover {
+        color: #F0EDEE;
+        background: #2c666e;
+        transition: .6s;
+    }
+}
+
+.manage-puzzles {
+  display:flex;
+  flex-wrap: wrap;
+  margin: 1% auto;
+  justify-content: center;
 }
