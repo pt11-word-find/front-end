@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 
 const ManagePuzzles = (props) => {
     const { puzzles, setPuzzles }= useContext(WordContext);
-    
+    const [myPuzzles, setMyPuzzles] = useState([])
 
     useEffect(() => {
         axiosWithAuth()
             .get(`wordlists/mine`)
             .then(response => {
                 console.log("my puzzles", response)
-                setPuzzles(response.data)
+                setMyPuzzles(response.data)
             })
             .catch(err => {
                 console.log("Error in getMyPuzzle", err)
@@ -36,8 +36,8 @@ const ManagePuzzles = (props) => {
         <>
         <h3>Choose a puzzle:</h3>
 
-        {puzzles.length > 0 ? <div className="manage-puzzles">
-        {puzzles.map(item => {
+        {myPuzzles.length > 0 ? <div className="manage-puzzles">
+        {myPuzzles.map(item => {
             return <div className="puzzle-link"><Link to={`/puzzles/${item.id}`}>
             <div>{item.title}</div></Link><button type="submit" className="manage-button" onClick={() => handleDelete(item.id)}>Delete Puzzle</button></div>})}
                       
