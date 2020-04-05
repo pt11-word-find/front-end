@@ -124,7 +124,7 @@ const Puzzle = (props) => {
                     )}
                 </div>
             )}
-            {wordlist.length > 0 ? <button style={{width: "100px", margin: "1% auto" }} className="manage-button" onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button> : null }
+            {wordlist.length > 0 ? <button className="manage-button" onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button> : null }
         </div>
         <div className="word-list">
             {wordlist.map(word => 

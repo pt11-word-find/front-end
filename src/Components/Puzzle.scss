@@ -12,30 +12,12 @@
         background: #2C666E;
         color: white;
       }
+
       .solvedTile {
         background: #61dafb;
         color: black;
       }
-      .crossedOut {
-        text-decoration: line-through;
-      }
-      .comicsans {
-        font-family: "Comic Sans MS", cursive, sans-serif;
-      }
-      .lucida {
-        font-family: "Lucida Console", Monaco, monospace
-      }
-      .impact {
-        font-family: Impact, Charcoal, sans-serif;
-      }
-      .bookman {
-        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-      }
-      .default-font {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-          sans-serif;
-      }
+
       .row {
         justify-content: center;
         display: flex;
@@ -71,5 +53,43 @@
       .word {
         margin-bottom: 2%;
       }
+    }
+    .crossedOut {
+        text-decoration: line-through;
+    }
+    
+    .comicsans {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+    }
+    .lucida {
+        font-family: "Lucida Console", Monaco, monospace
+    }
+    .impact {
+        font-family: Impact, Charcoal, sans-serif;
+    }
+    .bookman {
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    }
+    .default-font {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+    }
+    .manage-button {
+        font-size: 1.3rem;
+        align-self: center;
+        margin-top: 3%;
+        height: 30px;
+        width: 150px;
+        border-radius:10px;
+        background:#F0EDEE;
+        border: 2px solid #2c666e;
+        color: #2c666e;
+        transition: .6s;
+        &:hover {
+            color: #F0EDEE;
+            background: #2c666e;
+            transition: .6s;
+        }
     }
   }
