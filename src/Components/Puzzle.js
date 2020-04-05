@@ -11,6 +11,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import AOS from "aos"
 
 const Puzzle = (props) => {
+    const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
     const fonts = ["bookman", "comicsans", "impact", "default-font", "lucida"]
     const {puzzles, setPuzzles} = useContext(WordContext)
     const [puzzle, setPuzzle] = useState([[]])
@@ -143,6 +144,7 @@ const Puzzle = (props) => {
             )}
             {wordlist.length > 0 ? <button onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button> : null }
         </div>
+        
     </div>
     )
 }
