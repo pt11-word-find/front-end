@@ -128,9 +128,8 @@ const Puzzle = (props) => {
         <div className="word-list">
             {wordlist.map(word => 
             <p className={word.solved ? "crossedOut" : ""}>{word.word}</p>
-            
             )}
-            {wordlist.length > 0 ? <button onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button> : null }
+            {wordlist.length > 0 ? <button className="manage-button" onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button> : null }
         </div>
         
     </div>
