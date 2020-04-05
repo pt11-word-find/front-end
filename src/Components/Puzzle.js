@@ -8,7 +8,6 @@ import WordContext from "../contexts/WordContext";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import AOS from "aos"
 
 const Puzzle = (props) => {
     const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
@@ -122,7 +121,7 @@ const Puzzle = (props) => {
             }
             
             <br />
-            {puzzle.map((row, r_index) => 
+            {wordlist.length === 0 ? <h3>Loading ...</h3> : puzzle.map((row, r_index) => 
                 <div key={r_index + row} className="row">
                     {row.map((tile, c_index) => 
                         <div key={c_index + tile} style={{width: row.length > 20 ? `${100/row.length}%`: "25px"}} className={arrayIncluded(selectLetter, [r_index, c_index]) 
