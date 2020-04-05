@@ -51,63 +51,20 @@
   font-size: 1.2rem;
   color: #e3e5e4;
   text-decoration: none;
-  // color:  #2C666E;
-  // background-color: #e3e5e4;
-  // border-radius: 8px;
   padding: 10px;
   transition: .60s;
-  // border: 1px black solid;
-}
-
-.nav-links:hover {
-  color: #2C666E;
-  background-color: white;
-  text-decoration: none;
-  transition: .60s;
-}
-.footer {
-  // position: fixed;
-  width: 100%;
-  // bottom: 10px;
-  height: 1rem;
-  text-align: center;
-}
-.container {
-  display: flex;
-  justify-content: flex-start;
-  align-items:center;
-}
-.puzzle {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 800px;
-  margin-top:20px;
-  user-select: none;
-  .win-box {
-    position: absolute;
-    background:white;
-    padding:10px;
-    border: 1px solid black;
+  &:hover {
+    color: #2C666E;
+    background-color: white;
+    text-decoration: none;
+    transition: .60s;
   }
 }
 
-
-.row {
-  justify-content:flex-end;
-  display: flex;
+.footer {
   width: 100%;
-}
-.tile {
-  display: inline-block;
-  align-items: center;
-  line-height: 1.1;
-  width: 25px;
-  height: 25px;
-  justify-content: center;
+  height: 1rem;
   text-align: center;
-  padding-top: 3px;
-  cursor: pointer;
 }
 
 .puzzle-form {
@@ -118,67 +75,12 @@
   text-align: left;
 }
 
-.word-list {
-  text-align: left;
-  width: 20%;
-  padding-top: 1%;
-  padding-left: 30px;
-}
-
-.selectedTile {
-  background: #2C666E;
-  color: white;
-}
-
-.solvedTile {
-  background: #61dafb;
-  color: black;
-}
-
-.crossedOut {
-  text-decoration: line-through;
-}
-
-.selectedTile {
-  background: #2C666E;
-  color: white;
-}
-
-.comicsans {
-  font-family: "Comic Sans MS", cursive, sans-serif;
-}
-
-.lucida {
-  font-family: "Lucida Console", Monaco, monospace
-}
-
-.impact {
-  font-family: Impact, Charcoal, sans-serif;
-}
-
-.bookman {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-}
-
-.default-font {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-}
-
 .puzzle-list {
   display:flex;
   flex-wrap: wrap;
   margin: 1% auto;
   justify-content: center;
   padding: 1%;
-  // a {
-  //   border: 1px solid black;
-  //   width: 300px;
-  //   padding: 1%;
-  //   margin: 1%;
-
-  // }
 }
 
 .puzzle-link {
@@ -189,6 +91,8 @@
 }
 
 .manage-button {
+    font-size: 1.3rem;
+    margin-top: 3%;
     height: 40px;
     border-radius:10px;
     width: 100%;
@@ -208,4 +112,11 @@
   flex-wrap: wrap;
   margin: 1% auto;
   justify-content: center;
+}
+
+.loading {
+  background: #2c666e;
+  color: #F0EDEE;
+  border-radius: 10px;
+  transition: cubic-bezier(0.6, -0.28, 0.735, 0.045)
 }

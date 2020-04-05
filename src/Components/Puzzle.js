@@ -6,8 +6,8 @@ import stars from "../images/stars.svg";
 import inLine from "../utils/inLine";
 import WordContext from "../contexts/WordContext";
 import { Link } from "react-router-dom";
+import "./Puzzle.scss";
 import axios from "axios";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Puzzle = (props) => {
     const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
@@ -31,9 +31,9 @@ const Puzzle = (props) => {
                 console.log(response)
                 let words = response.data.wordlist.split(",").map(item => {
                     return {
-                        word: item,
+                        word: item[0].toUpperCase() + item.slice(1),
                         solved: false
-                    }
+                    }  
                 })
                 setWordlist(words)
                 console.log("words", words.sort((a,b) => a.length - b.length))
@@ -95,14 +95,14 @@ const Puzzle = (props) => {
 
     return (
         <div data-aos="fade-up" className="container">
-        <div className={`puzzle ${fonts[font]}`}>
+        <div style={{width: puzzle.length > 20 ? "50vmax" : ""}} className={`puzzle ${fonts[font]}`}>
             {(wordlist.length > 0 && wordlist.length === wordlist.filter(item => item.solved).length) 
             ? 
             (
                 <div className="win-box">
                     <img src={stars} alt="star graphic"></img>
                     <br />
-                    <Link to="/puzzles"><button type="submit" className="bt1">Select a New Puzzle</button></Link>
+                    <Link to="/puzzles"><button type="submit" className="manage-button">Select a New Puzzle</button></Link>
                     
                 </div>
             ) 
@@ -111,10 +111,11 @@ const Puzzle = (props) => {
             }
             
             <br />
-            {wordlist.length === 0 ? <h3>Loading ...</h3> : puzzle.map((row, r_index) => 
+            {wordlist.length === 0 ? <h3 className="loading">Loading ...</h3> : puzzle.map((row, r_index) => 
                 <div key={r_index + row} className="row">
                     {row.map((tile, c_index) => 
                         <div key={c_index + tile} style={{width: row.length > 20 ? `${100/row.length}%`: "25px"}} className={arrayIncluded(selectLetter, [r_index, c_index]) 
+                        
                             ? "selectedTile tile" 
                             : arrayIncluded(solved, [r_index, c_index])
                                 ? "solvedTile tile"
@@ -124,14 +125,13 @@ const Puzzle = (props) => {
                     )}
                 </div>
             )}
-
+            {wordlist.length > 0 ? <button className="manage-button" onClick={_ => setFont( (font + 1) % 5 )}>Change font</button> : null }
         </div>
         <div className="word-list">
             {wordlist.map(word => 
-            <p className={word.solved ? "crossedOut" : ""}>{word.word}</p>
-            
+            <p className={word.solved ? "crossedOut word" : "word"}>{word.word}</p>
             )}
-            {wordlist.length > 0 ? <button onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button> : null }
+            {/* {wordlist.length > 0 ? <button className="manage-button" onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button> : null } */}
         </div>
         
     </div>
