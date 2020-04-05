@@ -1,12 +1,12 @@
 .container {
-    border: 1px red solid;
+    // border: 1px red solid;
     display: flex;
     justify-content: center;
     .puzzle {
-      border: 1px black solid;
+      // border: 1px black solid;
       display: flex;
       flex-direction: column;
-      width: 50%;
+      width: 25vmax;
       user-select: none;
       .selectedTile {
         background: #2C666E;
@@ -42,13 +42,13 @@
     }
     .word-list {
       display: flex;
-      border: 1px black solid;
+      // border: 1px black solid;
       text-align: left;
       padding-top: 2%;
       padding-left: 3%;
-      height: 450px;
+      height: 25vmax;
       flex-flow: column wrap;
-      width: 30%;
+      width: 25%;
       justify-content: flex-start;
       .word {
         margin-bottom: 2%;
@@ -76,7 +76,7 @@
           sans-serif;
     }
     .manage-button {
-        font-size: 1.3rem;
+        font-size: 1.15rem;
         align-self: center;
         margin-top: 3%;
         height: 30px;

@@ -95,14 +95,14 @@ const Puzzle = (props) => {
 
     return (
         <div data-aos="fade-up" className="container">
-        <div className={`puzzle ${fonts[font]}`}>
+        <div style={{width: puzzle.length > 20 ? "50vmax" : ""}} className={`puzzle ${fonts[font]}`}>
             {(wordlist.length > 0 && wordlist.length === wordlist.filter(item => item.solved).length) 
             ? 
             (
                 <div className="win-box">
                     <img src={stars} alt="star graphic"></img>
                     <br />
-                    <Link to="/puzzles"><button type="submit" className="bt1">Select a New Puzzle</button></Link>
+                    <Link to="/puzzles"><button type="submit" className="manage-button">Select a New Puzzle</button></Link>
                     
                 </div>
             ) 
@@ -115,6 +115,7 @@ const Puzzle = (props) => {
                 <div key={r_index + row} className="row">
                     {row.map((tile, c_index) => 
                         <div key={c_index + tile} style={{width: row.length > 20 ? `${100/row.length}%`: "25px"}} className={arrayIncluded(selectLetter, [r_index, c_index]) 
+                        
                             ? "selectedTile tile" 
                             : arrayIncluded(solved, [r_index, c_index])
                                 ? "solvedTile tile"
@@ -124,7 +125,7 @@ const Puzzle = (props) => {
                     )}
                 </div>
             )}
-            {wordlist.length > 0 ? <button className="manage-button" onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button> : null }
+            {wordlist.length > 0 ? <button className="manage-button" onClick={_ => setFont( (font + 1) % 5 )}>Change font</button> : null }
         </div>
         <div className="word-list">
             {wordlist.map(word => 
