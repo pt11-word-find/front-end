@@ -33,7 +33,7 @@ const PuzzleList=()=>{
       {puzzles.map(item => {
         return <div className="puzzle-link"><Link to={`/puzzles/${item.id}`}>{item.title}</Link></div>})}   
       </div> 
-      : <h3>Loading ...</h3>}
+      : <h3 className="loading">Loading ...</h3>}
       </>
     )
   
