@@ -12,12 +12,10 @@
         background: #2C666E;
         color: white;
       }
-
       .solvedTile {
         background: #61dafb;
         color: black;
       }
-
       .row {
         justify-content: center;
         display: flex;
@@ -35,9 +33,13 @@
       }
       .win-box {
         position: absolute;
+        justify-content: center;
         background:white;
         padding:10px;
         border: 1px solid black;
+        .manage-button{
+          width: 200px;
+        }
       }
     }
     .word-list {
@@ -93,4 +95,15 @@
             transition: .6s;
         }
     }
+    // .win-box {
+    //   position: relative;
+    //   justify-content: center;
+    //   align-content: center;
+    //   background:white;
+    //   padding:10px;
+    //   border: 1px solid black;
+    //   .manage-button{
+    //     width: 200px;
+    //   }
+    // }
   }
