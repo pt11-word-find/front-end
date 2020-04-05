@@ -1,0 +1,75 @@
+.container {
+    border: 1px red solid;
+    display: flex;
+    justify-content: center;
+    .puzzle {
+      border: 1px black solid;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      user-select: none;
+      .selectedTile {
+        background: #2C666E;
+        color: white;
+      }
+      .solvedTile {
+        background: #61dafb;
+        color: black;
+      }
+      .crossedOut {
+        text-decoration: line-through;
+      }
+      .comicsans {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+      }
+      .lucida {
+        font-family: "Lucida Console", Monaco, monospace
+      }
+      .impact {
+        font-family: Impact, Charcoal, sans-serif;
+      }
+      .bookman {
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      }
+      .default-font {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+      }
+      .row {
+        justify-content: center;
+        display: flex;
+        .tile {
+          display: inline-block;
+          align-items: center;
+          line-height: 1.1;
+          width: 25px;
+          height: 25px;
+          justify-content: center;
+          text-align: center;
+          padding-top: 3px;
+          cursor: pointer;
+        }
+      }
+      .win-box {
+        position: absolute;
+        background:white;
+        padding:10px;
+        border: 1px solid black;
+      }
+    }
+    .word-list {
+      display: flex;
+      border: 1px black solid;
+      text-align: left;
+      padding-top: 2%;
+      padding-left: 3%;
+      height: 450px;
+      flex-flow: column wrap;
+      width: 30%;
+      justify-content: flex-start;
+      .word {
+        margin-bottom: 2%;
+      }
+    }
+  }

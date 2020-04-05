@@ -6,6 +6,7 @@ import stars from "../images/stars.svg";
 import inLine from "../utils/inLine";
 import WordContext from "../contexts/WordContext";
 import { Link } from "react-router-dom";
+import "./Puzzle.scss";
 import axios from "axios";
 
 const Puzzle = (props) => {
