@@ -7,7 +7,6 @@ import inLine from "../utils/inLine";
 import WordContext from "../contexts/WordContext";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const Puzzle = (props) => {
     const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
@@ -31,9 +30,9 @@ const Puzzle = (props) => {
                 console.log(response)
                 let words = response.data.wordlist.split(",").map(item => {
                     return {
-                        word: item,
+                        word: item[0].toUpperCase() + item.slice(1),
                         solved: false
-                    }
+                    }  
                 })
                 setWordlist(words)
                 console.log("words", words.sort((a,b) => a.length - b.length))
