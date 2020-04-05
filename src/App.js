@@ -11,6 +11,7 @@ import Navigation from "./Components/navs/Navigation.js";
 import AddWordList from "./Components/AddWordList.js";
 import PuzzleList from "./Components/PuzzleList";
 import Puzzle from "./Components/Puzzle";
+import ManagePuzzles from "./Components/ManagePuzzles";
 import './App.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -47,6 +48,7 @@ function App() {
             <Route path="/register" component={Register} />
             <Route exact path="/puzzles" component={PuzzleList} />
             <Route path="/puzzles/:id" component={Puzzle} />
+            <Route path="/managepuzzles" component={ManagePuzzles} />
           </div>
         </div>
       </WordContext.Provider>

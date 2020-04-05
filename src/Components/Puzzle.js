@@ -91,17 +91,7 @@ const Puzzle = (props) => {
         }
     }
 
-    const handleDelete = puzzle => {
-        console.log("Props: ", puzzle)
-        axiosWithAuth()
-          .delete(`/wordlists/${props.match.params.id}`)
-          .then(response => {
-            console.log("Response Data: ", response.data)
-            setPuzzles(puzzles.filter(item => item.id !== puzzle.id))
-            props.history.push("/puzzles")
-          })
-          .catch(err => console.log("Error in Delete Function: ", err))
-        }
+
 
     return (
         <div data-aos="fade-up" className="container">
@@ -112,8 +102,8 @@ const Puzzle = (props) => {
                 <div className="win-box">
                     <img src={stars} alt="star graphic"></img>
                     <br />
-                    <Link to="/puzzles"><button type="submit" className="bt1">New Puzzle</button></Link>
-                    <button type="submit" className="bt1" onClick={() => handleDelete(puzzle)}>Delete Puzzle</button>
+                    <Link to="/puzzles"><button type="submit" className="bt1">Select a New Puzzle</button></Link>
+                    
                 </div>
             ) 
             : 
