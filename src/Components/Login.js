@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import axios from "axios";
-import { Navbar, NavbarBrand, Button } from 'reactstrap';
-import { useHitsory } from 'react-router-dom';
 import styled from "styled-components";
 import WordContext from "../contexts/WordContext"
 
@@ -27,13 +25,6 @@ const Login = (props) => {
     username: "",
     password: "",
   });
-
-  // const history = useHistory();
-
-  // const logout = () => {
-  //   localStorage.removeItem("token");
-  //   history.push("/login");
-  // };
 
   const handleChange= e =>{
     setLog({...log, [e.target.name ]: e.target.value})

@@ -12,12 +12,10 @@
         background: #2C666E;
         color: white;
       }
-
       .solvedTile {
         background: #61dafb;
         color: black;
       }
-
       .row {
         justify-content: center;
         display: flex;
@@ -33,12 +31,32 @@
           cursor: pointer;
         }
       }
+      // .win-box {
+      //   position: absolute;
+      //   justify-content: center;
+      //   background:white;
+      //   padding:10px;
+      //   border: 1px solid black;
+        // .manage-button {
+        //   width: 200px;
+        // }
+      // }
       .win-box {
-        position: absolute;
-        background:white;
-        padding:10px;
-        border: 1px solid black;
+        border: 1px black solid;
+        position:fixed;
+        background: white;
+        padding-top: 1%;
+        width: 15%;
+        height: auto;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        .manage-button {
+          width: 200px;
+        }
       }
+      
+
     }
     .word-list {
       display: flex;
@@ -93,4 +111,5 @@
             transition: .6s;
         }
     }
+
   }
