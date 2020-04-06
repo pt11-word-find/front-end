@@ -9,7 +9,7 @@ import "./AboutPage.scss";
 const AboutPage = () => {
   return (
     <div>
-        <div className="card-row">
+      <div className="card-row">
           <div className="CardBody">
             <div className="CardTitle">
               <h3>Michael A. Harms</h3>
