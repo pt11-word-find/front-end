@@ -129,6 +129,8 @@
   margin: 1%;
 }
 
+
+
 .manage-button {
     font-size: 1.3rem;
     margin-top: 3%;
@@ -145,6 +147,15 @@
         background: #2c666e;
         transition: .6s;
     }
+
+}
+
+.manage-button-slim {
+  font-size: 1rem;
+    margin-top: 2%;
+    height: 30px;
+    border-radius:10px;
+    width: 25%;
 
 }
 
