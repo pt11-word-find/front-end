@@ -21,7 +21,6 @@ const AddWordList = (props) => {
     axiosWithAuth()
       .post("/wordlists", wordList)
       .then(response => {
-        console.log("post response", response)
         setWordList({
           title: "",
           wordlist: "",

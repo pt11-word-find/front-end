@@ -1,10 +1,8 @@
 export default function buildPuzzle(wordlist, puzzwidth, puzzheight, difficulty) {
     let longest = wordlist.sort((a,b) => b.length - a.length)[0].length;
     if (puzzwidth < longest || puzzheight < longest ) {
-      console.log("that puzzle won't fit.")
       return [["I","N","V","A","L","I","D"]]
     }
-    console.log(longest)
     let index = difficulty > 1 ? 8 : 4;
     function randomFill(wordsearch){
         const letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"

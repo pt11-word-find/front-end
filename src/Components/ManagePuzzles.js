@@ -11,7 +11,6 @@ const ManagePuzzles = (props) => {
         axiosWithAuth()
             .get(`wordlists/mine`)
             .then(response => {
-                console.log("my puzzles", response)
                 setMyPuzzles(response.data)
             })
             .catch(err => {
@@ -20,11 +19,9 @@ const ManagePuzzles = (props) => {
     }, [])
 
     const handleDelete = id => {
-        console.log("Props: ", id)
         axiosWithAuth()
           .delete(`/wordlists/${id}`)
           .then(response => {
-            console.log("Response Data: ", response.data)
             setPuzzles(puzzles.filter(item => item.id !== id))
             props.history.push("/puzzles")
           })

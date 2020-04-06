@@ -13,7 +13,6 @@ const PuzzleList=()=>{
       axiosWithAuth()
         .get("/wordlists")
         .then (response =>{
-          console.log(response)
         setPuzzles(response.data)
         })
     }, [])

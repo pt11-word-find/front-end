@@ -34,7 +34,6 @@ const Register = (props) => {
       axios
       .post ('https://wordlist-backend.herokuapp.com/auth/register', register)
       .then( res => {
-        console.log(res)
         localStorage.setItem("token", res.data.token)
         props.history.push( "/login")})
       .catch( err => {
