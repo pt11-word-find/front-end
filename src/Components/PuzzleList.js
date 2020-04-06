@@ -27,7 +27,7 @@ const PuzzleList=()=>{
       :
       null
       }
-      <h2 style={{margin: "20px auto", width: "50%", marginBottom: "-5px", borderRadius: "20px", background: "#F0EDEE", border: "1px solid black"}}>Public Puzzles</h2>
+      <h2 style={{margin: "1% auto", width: "40%", marginBottom: "-5px", borderRadius: "20px", background: "white", border: "1px solid black"}}>Public Puzzles</h2>
       {puzzles.length > 0 ? <div className="puzzle-list">
       {puzzles.map(item => {
         return <div className="puzzle-link">
