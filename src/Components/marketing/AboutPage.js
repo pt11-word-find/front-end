@@ -38,11 +38,11 @@ const AboutPage = () => {
             <h3>Kristi Gribble</h3> 
               <img className="CardImg" src={Kristi} alt="Kristi Gribble" />           
                 <div className="CardText">
-                <h4>Development Lead - User Research</h4>
+                <h4>Development Lead + User Research</h4>
                 <p>
                   <div>
                     Kristi is a full stack web developer with a passion for family, education, and green tea. She's notorious for her ability
-                    as well as her modesty. Wordsurge is Kristi's brainchild. She spearheaded user research, front-end development, and user testing.
+                    as well as her modesty. Wordsurge is Kristi's brainchild. She led user research, front-end development, and user testing.
                   </div>
                 </p>
                 </div>
