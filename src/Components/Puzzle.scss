@@ -42,17 +42,18 @@
         // }
       // }
       .win-box {
-        border: 1px black solid;
+        //border: 1px black solid;
         position:fixed;
-        background: white;
+        background: rgba(255, 255, 255, 0.664);
         padding-top: 1%;
-        width: 15%;
+        width: 80%;
         height: auto;
         top:50%;
         left:50%;
         transform: translate(-50%,-50%);
         .manage-button {
           width: 200px;
+          
         }
       }
       
