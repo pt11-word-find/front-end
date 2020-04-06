@@ -21,13 +21,12 @@ const AddWordList = (props) => {
     axiosWithAuth()
       .post("/wordlists", wordList)
       .then(response => {
-        console.log("post response", response)
         setWordList({
           title: "",
           wordlist: "",
        
         })
-        props.history.push("/puzzles")
+        props.history.push("/managepuzzles")
       })
       .catch(err => {
         if (err.response) {

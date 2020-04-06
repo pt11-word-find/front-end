@@ -30,7 +30,6 @@ const Puzzle = (props) => {
         axios
             .get(`https://wordlist-backend.herokuapp.com/wordlists/${props.match.params.id}`)
             .then(response => {
-                console.log(response)
                 let words = response.data.wordlist.split(",").map(item => {
                     return {
                         word: item[0].toUpperCase() + item.slice(1),
@@ -38,11 +37,8 @@ const Puzzle = (props) => {
                     }  
                 })
                 setWordlist(words)
-                console.log("words", words.sort((a,b) => a.length - b.length))
                 let longest = words.sort((a,b) => a.length - b.length)[0].word.length;
-                console.log("longest", longest)
                 longest = longest > 15 ? longest : 15;
-                console.log("longest", longest)
                 setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest+ 1, 1))
             })
             .catch(err => {
@@ -55,7 +51,6 @@ const Puzzle = (props) => {
     useEffect(() => {
         
         let sortedSelect = selectLetter.map(item => puzzle[item[0]][item[1]]).sort()
-        console.log("Solved array", solved)
         
         wordlist.map(item => {
             if (arrayEqual(sortedSelect, item.word.toUpperCase().split(" ").join("").split("").sort())) { 
@@ -89,7 +84,6 @@ const Puzzle = (props) => {
             } else {
                 setSelectLetter([[r_index, c_index]])
             }
-            console.log("select letter", selectLetter)
         }
     }
 

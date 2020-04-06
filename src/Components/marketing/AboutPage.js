@@ -7,13 +7,6 @@ import Catherine from "../../images/catherine.png";
 import "./AboutPage.scss";
 
 const AboutPage = () => {
-    const black = {
-    color: "black",
-    fontWeight: "900",
-   };
-    const margin = {
-    margin: "2%",
-  };
   return (
     <div>
         <div className="card-row">
@@ -27,6 +20,7 @@ const AboutPage = () => {
                   <div>
                     Michael is a Lamba School TL, open-source software engineer, and published author. He likes coffee, calisthenics, and humanity.
                     Michael is excited about bringing humanity into a new golden age through cost-reduction, and is actively laying out the welcome mat for our AI overlords.
+                    He can be easily reached via <a href="https://twitter.com/michaelharms70" rel="noopener noreferrer" target="_blank">twitter</a>.
                   </div>
                 </p>
                 </div>

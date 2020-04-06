@@ -72,6 +72,7 @@
   flex-direction: column;
   width: 60%;
   margin: 3% auto;
+  margin-top: 12%;
   text-align: left;
   background: #2C666E;
   color: #e3e5e4;
@@ -122,11 +123,19 @@
 }
 
 .puzzle-link {
+  font-weight: bold;
   border: 1px solid black;
   width: 300px;
   padding: 1%;
   margin: 1%;
+  border-radius: 10px;
+  background: #F0EDEE;
+  a {
+    color:blue;
+  }
 }
+
+
 
 .manage-button {
     font-size: 1.3rem;
@@ -138,11 +147,21 @@
     border: 2px solid #2c666e;
     color: #2c666e;
     transition: .6s;
+    cursor:pointer;
     &:hover {
         color: #F0EDEE;
         background: #2c666e;
         transition: .6s;
     }
+
+}
+
+.manage-button-slim {
+  font-size: 1rem;
+    margin-top: 2%;
+    height: 30px;
+    border-radius:10px;
+    width: 25%;
 
 }
 

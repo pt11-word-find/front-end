@@ -13,7 +13,6 @@ const PuzzleList=()=>{
       axiosWithAuth()
         .get("/wordlists")
         .then (response =>{
-          console.log(response)
         setPuzzles(response.data)
         })
     }, [])
@@ -24,7 +23,7 @@ const PuzzleList=()=>{
       <h3>Choose a puzzle:</h3>
       {loggedIn
       ?
-      <Link to={`/managepuzzles`}>Manage My Puzzles</Link>
+      <Link to={`/managepuzzles`}><button className="manage-button manage-button-slim">My Puzzles</button></Link>
       :
       null
       }
