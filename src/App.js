@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ReactGA from "react-ga";
 import WordContext from "./contexts/WordContext";
 import LandingPage from "./Components/marketing/LandingPage.js";
@@ -49,7 +49,11 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route exact path="/puzzles" component={PuzzleList} />
-            <Route path="/puzzles/:id" component={Puzzle} />
+            <Switch>
+              <Route path="/puzzles/hard/:id" render={props => <Puzzle {...props} hard={true} /> } />
+              <Route path="/puzzles/:id" component={Puzzle} />
+            
+            </Switch>
             <Route path="/managepuzzles" component={ManagePuzzles} />
             <Route path="/admin" component={Admin} />
           </div>

@@ -193,5 +193,13 @@
   background: #2c666e;
   color: #F0EDEE;
   border-radius: 10px;
+  height: 30px;
+  width: 60%;
   transition: cubic-bezier(0.6, -0.28, 0.735, 0.045)
+}
+
+.difficulty-button {
+  width: 40%;
+  margin: 3%;
+  background: rgb(219, 219, 219);
 }

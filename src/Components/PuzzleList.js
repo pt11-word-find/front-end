@@ -20,17 +20,21 @@ const PuzzleList=()=>{
     // If loggedIn === true, show managepuzzles link 
     return(
       <>
-      <h3>Choose a puzzle:</h3>
+      
       {loggedIn
       ?
       <Link to={`/managepuzzles`}><button className="manage-button manage-button-slim">My Puzzles</button></Link>
       :
       null
       }
-    
+      <h2 style={{margin: "20px auto", width: "50%", marginBottom: "-5px", borderRadius: "20px", background: "#F0EDEE", border: "1px solid black"}}>Public Puzzles</h2>
       {puzzles.length > 0 ? <div className="puzzle-list">
       {puzzles.map(item => {
-        return <div className="puzzle-link"><Link to={`/puzzles/${item.id}`}>{item.title}</Link></div>})}   
+        return <div className="puzzle-link">
+          <h4>{item.title}</h4>
+          <Link to={`/puzzles/${item.id}`}><button className="manage-button difficulty-button">Easy</button></Link>
+          <Link to={`/puzzles/hard/${item.id}`}><button className="manage-button difficulty-button">Hard</button></Link>
+        </div>})}   
       </div> 
       : <h3 className="loading">Loading ...</h3>}
       </>
