@@ -46,7 +46,7 @@ const Login = (props) => {
 
   // Make sure to add a logout function
   return (
-      <FormWrapper onSubmit={handleSubmit}>
+      <FormWrapper className="puzzle-form"onSubmit={handleSubmit}>
         <div className="Title">
           <h2>Please Login</h2>
         </div>

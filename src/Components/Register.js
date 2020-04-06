@@ -45,7 +45,7 @@ const Register = (props) => {
 
 
   return (
-    <FormWrapper onSubmit={handleSubmit}>
+    <FormWrapper className="puzzle-form" onSubmit={handleSubmit}>
       <div className="Title">
         <h2>Please Register To Create Puzzles</h2>
 
