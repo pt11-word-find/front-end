@@ -2,7 +2,7 @@ import React from 'react';
 import Mike from "../../images/mike.png";
 import Kristi from "../../images/kristi.png";
 import Shya from "../../images/shya.png";
-import Brian from "../../images/Brian_Avatar.jpg";
+import Brian from "../../images/brian.png";
 import Catherine from "../../images/catherine.png";
 import "./AboutPage.scss";
 
@@ -48,8 +48,23 @@ const AboutPage = () => {
                 </div>
             </div>
           </div>
+  
+        <div className="CardBody">
+          <div className="CardTitle">
+            <h3>Brian Leonard</h3>
+              <img className="CardImg" src={Brian} alt="Brian Leonard" />           
+                <div className="CardText">
+                <p>
+                  <div>
+                    Brian is a full stack student at Lambda School. He is
+                    currently helping us with backend implementation for this
+                    project
+                  </div>
+                </p>
+                </div>
+            </div>
+        </div>
         
-
         <div className="CardBody">
           <div className="CardTitle">
             <h3>Shya Biswas</h3>
@@ -72,25 +87,7 @@ const AboutPage = () => {
                 </div>
             </div>
           </div>
-        
-
-        <div className="CardBody">
-          <div className="CardTitle">
-            <h3>Brian Leonard</h3>
-              <img className="CardImg" src={Brian} alt="Brian Leonard" />           
-                <div className="CardText">
-                <p>
-                  <div>
-                    Brian is a full stack student at Lambda School. He is
-                    currently helping us with backend implementation for this
-                    project
-                  </div>
-                </p>
-                </div>
-            </div>
-        </div>
-        
-
+          
         <div className="CardBody">
           <div className="CardTitle">
             <h3>Catherine Kim</h3>
