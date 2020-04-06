@@ -38,8 +38,8 @@ const ManagePuzzles = (props) => {
         {myPuzzles.map(item => {
             return <div className="puzzle-link">
             <h4>{item.title}</h4>
-            <Link to={`/puzzles/${item.id}`}><button className="manage-button difficulty-button">Play Easy</button></Link>
-            <Link to={`/puzzles/hard/${item.id}`}><button className="manage-button difficulty-button">Play Hard</button></Link>
+            <Link to={`/puzzles/${item.id}`}><button className="manage-button difficulty-button">Easy</button></Link>
+            <Link to={`/puzzles/hard/${item.id}`}><button className="manage-button difficulty-button">Hard</button></Link>
             <button type="submit" className="manage-button" onClick={() => handleDelete(item.id)}>Delete Puzzle</button></div>})}
                       
             
