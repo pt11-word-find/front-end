@@ -64,7 +64,7 @@ const Register = (props) => {
         value={register.password}
         onChange={handleChange}
       />
-      <button type="submit"> Submit </button>
+      <button className="manage-button" type="submit"> Submit </button>
       <p>Already have an account? <Link to="/login">Login here!</Link></p>
     </FormWrapper>
     

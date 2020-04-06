@@ -11,6 +11,7 @@ const FormWrapper = styled.form`
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  
 `;
 
 /*
@@ -63,7 +64,7 @@ const Login = (props) => {
           value={log.password}
           onChange={handleChange}
         />
-        <button type="submit"> Submit </button>
+        <button className="manage-button-2" type="submit"> Submit </button>
       </FormWrapper>
   );
 }

@@ -35,6 +35,7 @@ const ManagePuzzles = (props) => {
 
         <>
         <h3>Choose a puzzle:</h3>
+        <Link to="/puzzles">Back</Link> to Puzzle List
 
         {myPuzzles.length > 0 ? <div className="manage-puzzles">
         {myPuzzles.map(item => {
