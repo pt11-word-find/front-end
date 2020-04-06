@@ -43,7 +43,7 @@ const AddWordList = (props) => {
     return (
       <>
       <form className="puzzle-form" onSubmit={submitForm}>
-      <label htmlFor="source">Puzzle Title</label>
+      <label htmlFor="source">Title</label>
           <textarea
             type="text"
             name="title"
@@ -51,7 +51,7 @@ const AddWordList = (props) => {
             value={wordList.title}
             onChange={handleChange}
             />
-        <label htmlFor="source">Puzzle Source</label>
+        <label htmlFor="source">Words</label>
           <textarea
             type="text"
             name="wordlist"
