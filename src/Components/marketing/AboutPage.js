@@ -94,7 +94,7 @@ const AboutPage = () => {
             <h3>Catherine Kim</h3>
               <img className="CardImg" src={Catherine} alt="Catherine Kim" />           
                 <div className="CardText">
-                <h4>Styles and Github Guru</h4>
+                <h4>Styles + Github Guru</h4>
                 <p>
                   <div>
                     Catherine is a full stack developer with a growth mindset.
