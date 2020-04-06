@@ -27,7 +27,7 @@ const AddWordList = (props) => {
           wordlist: "",
        
         })
-        props.history.push("/puzzles")
+        props.history.push("/managepuzzles")
       })
       .catch(err => {
         if (err.response) {
