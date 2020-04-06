@@ -2,7 +2,7 @@ import React from 'react';
 import Mike from "../../images/mike.png";
 import Kristi from "../../images/kristi.png";
 import Shya from "../../images/shya.png";
-import Brian from "../../images/Brian_Avatar.jpg";
+import Brian from "../../images/brian.png";
 import Catherine from "../../images/catherine.png";
 import "./AboutPage.scss";
 
