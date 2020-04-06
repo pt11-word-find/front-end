@@ -39,7 +39,11 @@ const Puzzle = (props) => {
                 setWordlist(words)
                 let longest = words.sort((a,b) => a.length - b.length)[0].word.length;
                 longest = longest > 15 ? longest : 15;
-                setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest+ 1, 1))
+                if (props.hard) {
+                    setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest+ 1, 2))
+                }else {
+                    setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest+ 1, 1))
+                }
             })
             .catch(err => {
                 console.log("Error: ", err)

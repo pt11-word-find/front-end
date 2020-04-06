@@ -30,7 +30,11 @@ const PuzzleList=()=>{
     
       {puzzles.length > 0 ? <div className="puzzle-list">
       {puzzles.map(item => {
-        return <div className="puzzle-link"><Link to={`/puzzles/${item.id}`}>{item.title}</Link></div>})}   
+        return <div className="puzzle-link">
+          <h4>{item.title}</h4>
+          <Link to={`/puzzles/${item.id}`}><button className="manage-button difficulty-button">Play Easy</button></Link>
+          <Link to={`/puzzles/hard/${item.id}`}><button className="manage-button difficulty-button">Play Hard</button></Link>
+        </div>})}   
       </div> 
       : <h3 className="loading">Loading ...</h3>}
       </>
