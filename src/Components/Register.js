@@ -7,7 +7,6 @@ const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
 `;
 
 // const Title = styled.h2`
