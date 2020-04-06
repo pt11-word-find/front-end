@@ -18,7 +18,7 @@ const LandingPage = () => {
         <Link to={loggedIn ? "/addWords" : "/register"}><button>Create a New Puzzle</button></Link>
       </div>
       <div className="landing-pic">
-        <img src={landingpic} />
+        <img alt="people putting together a puzzle shaped like a head" src={landingpic} />
       </div>
       
     </div>
