@@ -123,10 +123,14 @@
 }
 
 .puzzle-link {
+  font-weight: bold;
   border: 1px solid black;
   width: 300px;
   padding: 1%;
   margin: 1%;
+  a {
+    color:blue;
+  }
 }
 
 
