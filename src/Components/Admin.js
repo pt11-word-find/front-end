@@ -8,7 +8,7 @@ export default function Admin() {
         axiosWithAuth()
             .get("wordlists/all")
                 .then(res => {
-                    setWordlists(res.data.sort((a,b) => a.id - b.id))
+                    setWordlists(res.data.filter(item => !item.approved).sort((a,b) => a.id - b.id))
                 })
                 .catch(err => console.log(err.response))
     },[])
@@ -35,7 +35,8 @@ export default function Admin() {
 
     return(
         <div className="admin-panel">
-            {wordlists.map(item => 
+
+            {wordlists.length > 0 ? wordlists.map(item => 
                 <div style={{background: item.approved ? "green": "moccasin"}} className="wordlist-admin-card">
                     <p>Id: {item.id} User id: {item.user_id}</p>
                     <h3>{item.title}</h3>
@@ -43,7 +44,9 @@ export default function Admin() {
                     <button onClick={_ => handleApprove(item.id)}>Approve Wordlist</button>
                     <button onClick={_ => handleDelete(item.id)} style={{background: "red"}}>Delete Wordlist</button>
                 </div>
-            )}
+            )
+            : <h2>No wordlists pending approval!</h2>
+        }
 
         </div>
 
