@@ -2,7 +2,7 @@ import React from 'react';
 import Mike from "../../images/mike.png";
 import Kristi from "../../images/kristi.png";
 import Shya from "../../images/shya.png";
-import Brian from "../../images/Brian_Avatar.jpg";
+import Brian from "../../images/brian.png";
 import Catherine from "../../images/catherine.png";
 import "./AboutPage.scss";
 
@@ -48,22 +48,39 @@ const AboutPage = () => {
                 </div>
             </div>
           </div>
+<<<<<<< HEAD
           <div className="CardBody">
+=======
+  
+        <div className="CardBody">
+>>>>>>> 8ba6f3610911635ca8bd7450f55de18eed23c077
           <div className="CardTitle">
             <h3>Brian Leonard</h3>
               <img className="CardImg" src={Brian} alt="Brian Leonard" />           
                 <div className="CardText">
+<<<<<<< HEAD
                 <h4>Junior Node Engineer</h4>
                 <p>
                   <div>
                     Brian is a full stack web developer and lifelong learner. His strong work ethic and inquisitive nature made
                     him a great asset to this project.
+=======
+                <p>
+                  <div>
+                    Brian is a full stack student at Lambda School. He is
+                    currently helping us with backend implementation for this
+                    project
+>>>>>>> 8ba6f3610911635ca8bd7450f55de18eed23c077
                   </div>
                 </p>
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 8ba6f3610911635ca8bd7450f55de18eed23c077
         <div className="CardBody">
           <div className="CardTitle">
             <h3>Shya Biswas</h3>
@@ -87,11 +104,15 @@ const AboutPage = () => {
                 </div>
             </div>
           </div>
+<<<<<<< HEAD
         
 
         
         
 
+=======
+          
+>>>>>>> 8ba6f3610911635ca8bd7450f55de18eed23c077
         <div className="CardBody">
           <div className="CardTitle">
             <h3>Catherine Kim</h3>
