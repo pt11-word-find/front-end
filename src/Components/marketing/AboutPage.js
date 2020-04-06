@@ -22,11 +22,11 @@ const AboutPage = () => {
               <h3>Michael A. Harms</h3>
               <img className="CardImg" src={Mike} alt="Michael A. Harms" />           
                 <div className="CardText">
+                <h4>Project Manager - Algorithm Engineer - Devops</h4>
                 <p>
                   <div>
-                    Michael is an awesome TL at Lambda School. He is great at
-                    guiding students to find efficient solutions for their
-                    full-stack React App
+                    Michael is a Lamba School TL, open-source software engineer, and published author. He likes coffee, calisthenics, and humanity.
+                    Michael is excited about bringing humanity into a new golden age through cost-reduction, and is actively laying out the welcome mat for our AI overlords.
                   </div>
                 </p>
                 </div>
@@ -38,23 +38,38 @@ const AboutPage = () => {
             <h3>Kristi Gribble</h3> 
               <img className="CardImg" src={Kristi} alt="Kristi Gribble" />           
                 <div className="CardText">
+                <h4>Development Lead - User Research</h4>
                 <p>
                   <div>
-                    Kristi is an awesome full stack student at Lambda School. She
-                    is great at helping other students to debug, test on Postman
-                    for BE projects with ExpressJS and NodeJS
+                    Kristi is a full stack web developer with a passion for family, education, and green tea. She's notorious for her ability
+                    as well as her modesty. Wordsurge is Kristi's brainchild. She spearheaded user research, front-end development, and user testing.
                   </div>
                 </p>
                 </div>
             </div>
           </div>
-        
+          <div className="CardBody">
+          <div className="CardTitle">
+            <h3>Brian Leonard</h3>
+              <img className="CardImg" src={Brian} alt="Brian Leonard" />           
+                <div className="CardText">
+                <h4>Junior Node Engineer</h4>
+                <p>
+                  <div>
+                    Brian is a full stack web developer and lifelong learner. His strong work ethic and inquisitive nature made
+                    him a great asset to this project.
+                  </div>
+                </p>
+                </div>
+            </div>
+        </div>
 
         <div className="CardBody">
           <div className="CardTitle">
             <h3>Shya Biswas</h3>
               <img className="CardImg" src={Shya} alt="Shya Biswas" />           
                 <div className="CardText">
+                <h4>About Page</h4>
                 <p>
                   <div>
                   Shya Biswas is presently persuing full stack webdevelopment
@@ -74,21 +89,7 @@ const AboutPage = () => {
           </div>
         
 
-        <div className="CardBody">
-          <div className="CardTitle">
-            <h3>Brian Leonard</h3>
-              <img className="CardImg" src={Brian} alt="Brian Leonard" />           
-                <div className="CardText">
-                <p>
-                  <div>
-                    Brian is a full stack student at Lambda School. He is
-                    currently helping us with backend implementation for this
-                    project
-                  </div>
-                </p>
-                </div>
-            </div>
-        </div>
+        
         
 
         <div className="CardBody">
@@ -96,6 +97,7 @@ const AboutPage = () => {
             <h3>Catherine Kim</h3>
               <img className="CardImg" src={Catherine} alt="Catherine Kim" />           
                 <div className="CardText">
+                <h4>Styles and Github Guru</h4>
                 <p>
                   <div>
                     Catherine is a full stack developer with a growth mindset.
