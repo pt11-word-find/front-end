@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import "./Puzzle.scss";
 import axios from "axios";
 import Modal from "./Modal";
+import Footer from "../Components/navs/Footer";
 
 const Puzzle = (props) => {
     const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]

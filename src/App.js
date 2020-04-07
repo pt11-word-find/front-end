@@ -13,6 +13,7 @@ import PuzzleList from "./Components/PuzzleList";
 import Puzzle from "./Components/Puzzle";
 import ManagePuzzles from "./Components/ManagePuzzles";
 import Admin from "./Components/Admin";
+import Footer from "./Components/navs/Footer";
 
 import './App.scss';
 import AOS from 'aos';
@@ -57,6 +58,7 @@ function App() {
             <Route path="/managepuzzles" component={ManagePuzzles} />
             <Route path="/admin" component={Admin} />
           </div>
+          <Footer />
         </div>
       </WordContext.Provider>
     </Router>
