@@ -31,7 +31,7 @@
         .tile {
           display: inline-block;
           align-items: center;
-          line-height: 1.1;
+          line-height: 1.4;
           width: 30px;
           height: 30px;
           justify-content: center;
@@ -75,7 +75,7 @@
       // border: 1px black solid;
       text-align: left;
       padding: 2%;
-      height: 40vmax;
+      max-height: 40vmax;
       margin: 1%;
       flex-flow: column wrap;
       width: 25%;
@@ -139,6 +139,8 @@
         width: 600px;
         height: 40vh;
         max-height: 500px;
+        flex-direction: row;
+        justify-content: space-around;
       }
     }
   }
