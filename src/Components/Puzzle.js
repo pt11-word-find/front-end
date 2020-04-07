@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import "./Puzzle.scss";
 import axios from "axios";
 import Modal from "./Modal";
+import Footer from "../Components/navs/Footer";
 
 const Puzzle = (props) => {
     const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
@@ -18,6 +19,7 @@ const Puzzle = (props) => {
     const [selectLetter, setSelectLetter] = useState([])
     const [solved, setSolved] = useState([])
     const [font, setFont] = useState(3)
+    const [title, setTitle] = useState("")
     const [modal, setModal] = useState(false);
     const [wordlist, setWordlist] = useState([].map(item => {
         return {
@@ -36,6 +38,7 @@ const Puzzle = (props) => {
                         solved: false
                     }  
                 })
+                setTitle(response.data.title)
                 setWordlist(words)
                 let longest = words.sort((a,b) => a.length - b.length)[0].word.length;
                 longest = longest > 15 ? longest : 15;
@@ -101,7 +104,7 @@ const Puzzle = (props) => {
 
     return (
         <div data-aos="fade-up" className="container">
-        <div style={{width: puzzle.length > 20 ? "50vmax" : ""}} className={`puzzle ${fonts[font]}`}>
+        <div className={`puzzle ${fonts[font]}`}>
             {(wordlist.length > 0 && wordlist.length === wordlist.filter(item => item.solved).length) 
             ? 
             (
@@ -114,11 +117,12 @@ const Puzzle = (props) => {
             ""
             }
             
-            <br />
+            <h3>{title}</h3>
             {wordlist.length === 0 ? <h3 className="loading">Loading ...</h3> : puzzle.map((row, r_index) => 
                 <div key={r_index + row} className="row">
                     {row.map((tile, c_index) => 
-                        <div key={c_index + tile} style={{width: row.length > 20 ? `${100/row.length}%`: "25px"}} className={arrayIncluded(selectLetter, [r_index, c_index]) 
+                    
+                        <div key={c_index + tile}  className={arrayIncluded(selectLetter, [r_index, c_index]) 
                         
                             ? "selectedTile tile" 
                             : arrayIncluded(solved, [r_index, c_index])
@@ -129,7 +133,7 @@ const Puzzle = (props) => {
                     )}
                 </div>
             )}
-            {wordlist.length > 0 ? <button className="manage-button" onClick={_ => setFont( (font + 1) % 5 )}>Change font</button> : null }
+            {wordlist.length > 0 ? <button className="font-button manage-button" onClick={_ => setFont( (font + 1) % 5 )}>Change font</button> : null }
         </div>
         <div className="word-list">
             {wordlist.map(word => 

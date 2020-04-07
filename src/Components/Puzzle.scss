@@ -4,10 +4,19 @@
     justify-content: center;
     .puzzle {
       // border: 1px black solid;
+      margin-top: 1%;
       display: flex;
       flex-direction: column;
-      width: 25vmax;
+      width: 600px;
       user-select: none;
+      background: #F0EDEE;
+      border: 1px solid black;
+      h3 {
+        margin: 10px auto;
+        border: 1px solid black;
+        // border-radius: 15px;
+        width: 30%;
+      }
       .selectedTile {
         background: #2C666E;
         color: white;
@@ -23,8 +32,8 @@
           display: inline-block;
           align-items: center;
           line-height: 1.1;
-          width: 25px;
-          height: 25px;
+          width: 30px;
+          height: 30px;
           justify-content: center;
           text-align: center;
           padding-top: 3px;
@@ -56,21 +65,25 @@
           
         }
       }
+
       
 
     }
+
     .word-list {
       display: flex;
       // border: 1px black solid;
       text-align: left;
-      padding-top: 2%;
-      padding-left: 3%;
-      height: 25vmax;
+      padding: 2%;
+      height: 40vmax;
+      margin: 1%;
       flex-flow: column wrap;
       width: 25%;
       justify-content: flex-start;
+      background: #F0EDEE;
+      border: 1px solid black;
       .word {
-        margin-bottom: 2%;
+        margin: 2%;
       }
     }
     .crossedOut {
@@ -114,3 +127,20 @@
     }
 
   }
+
+  @media screen and (max-width:800px) {
+    .container {
+      flex-direction:column;
+      align-items: center;
+      .font-button {
+        display:none;
+      }
+      .word-list {
+        width: 600px;
+        height: 40vh;
+        max-height: 500px;
+      }
+    }
+  }
+
+  
