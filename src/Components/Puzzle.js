@@ -104,7 +104,7 @@ const Puzzle = (props) => {
 
     return (
         <div data-aos="fade-up" className="container">
-        <div className={`puzzle ${fonts[font]}`}>
+        <div className={`puzzle ${fonts[font]}`} style={{padding: "0 .25", width: puzzle.length > 20 ? "60vw" : ""}}>
             {(wordlist.length > 0 && wordlist.length === wordlist.filter(item => item.solved).length) 
             ? 
             (
