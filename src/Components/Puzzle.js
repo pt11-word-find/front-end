@@ -1,26 +1,21 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import wordSearch from "../utils/wordSearch-generator";
 import arrayIncluded from "../utils/arrayIncluded";
 import arrayEqual from "../utils/arrayEqual";
-import stars from "../images/stars.svg";
 import inLine from "../utils/inLine";
-import WordContext from "../contexts/WordContext";
-import { Link } from "react-router-dom";
 import "./Puzzle.scss";
 import axios from "axios";
 import Modal from "./Modal";
-import Footer from "../Components/navs/Footer";
 
 const Puzzle = (props) => {
-    const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
+    //const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
     const fonts = ["bookman", "comicsans", "impact", "default-font", "lucida"]
-    const {puzzles, setPuzzles} = useContext(WordContext)
     const [puzzle, setPuzzle] = useState([[]])
     const [selectLetter, setSelectLetter] = useState([])
     const [solved, setSolved] = useState([])
     const [font, setFont] = useState(3)
     const [title, setTitle] = useState("")
-    const [modal, setModal] = useState(false);
+    const [setModal] = useState(false);
     const [wordlist, setWordlist] = useState([].map(item => {
         return {
             word: item,
@@ -69,7 +64,7 @@ const Puzzle = (props) => {
             .catch(err => {
                 console.log("Error: ", err)
             })
-    }, [])
+    }, [props.match.params.id])
     
     // When letters in the array are 'Matched' to a wordlist word - change letter background colors,
     // *add to solved array*, cross word from the list or remove word from the list.
@@ -116,10 +111,6 @@ const Puzzle = (props) => {
         setModal(true)
     }
 
-    const hideModal = () => {
-        setModal(false)
-    }
-
     return (
         <div data-aos="fade-up" className="container">
         <div className={`puzzle ${fonts[font]}`} style={{padding: "0 .25", width: puzzle.length > 20 ? "60vw" : ""}}>
@@ -138,10 +129,8 @@ const Puzzle = (props) => {
             <h3>{title}</h3>
             {wordlist.length === 0 ? <h3 className="loading">Loading ...</h3> : puzzle.map((row, r_index) => 
                 <div key={r_index + row} className="row">
-                    {row.map((tile, c_index) => 
-                    
-                        <div key={c_index + tile}  className={arrayIncluded(selectLetter, [r_index, c_index]) 
-                        
+                    {row.map((tile, c_index) =>                
+                        <div key={c_index + tile}  className={arrayIncluded(selectLetter, [r_index, c_index])                        
                             ? "selectedTile tile" 
                             : arrayIncluded(solved, [r_index, c_index])
                                 ? "solvedTile tile"
@@ -155,11 +144,9 @@ const Puzzle = (props) => {
         </div>
         <div className="word-list">
             {wordlist.map(word => 
-            <p className={word.solved ? "crossedOut word" : "word"}>{word.word}</p>
+            <p key={word.word} className={word.solved ? "crossedOut word" : "word"}>{word.word}</p>
             )}
-            {/* {wordlist.length > 0 ? <button className="manage-button" onClick={_ => setFont( (font + 1) % 5 )}>Toggle font</button> : null } */}
-        </div>
-        
+        </div>  
     </div>
     )
 }

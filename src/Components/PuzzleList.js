@@ -15,7 +15,7 @@ const PuzzleList=()=>{
         .then (response =>{
         setPuzzles(response.data)
         })
-    }, [])
+    }, [setPuzzles])
 
     // If loggedIn === true, show managepuzzles link 
     return(
@@ -30,7 +30,7 @@ const PuzzleList=()=>{
       <h2 style={{margin: "1% auto", width: "40%", marginBottom: "-5px", borderRadius: "20px", background: "white", border: "1px solid black"}}>Public Puzzles</h2>
       {puzzles.length > 0 ? <div className="puzzle-list">
       {puzzles.map(item => {
-        return <div className="puzzle-link">
+        return <div key={item.id} className="puzzle-link">
           <h4>{item.title}</h4>
           <h5>By {users.find(user => item.user_id === user.id).username}</h5>
           <Link to={`/puzzles/${item.id}`}><button className="manage-button difficulty-button">Easy</button></Link>
