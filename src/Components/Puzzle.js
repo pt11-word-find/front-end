@@ -51,7 +51,7 @@ const Puzzle = (props) => {
                 longest = longest > 15 ? longest : 15;
                 if (props.hard) {
                     if (charCount >= 150) {
-                    setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), width, width, 1))
+                    setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), width, width, 2))
                     } else {
                     setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest+ 1, 2))
                     }
