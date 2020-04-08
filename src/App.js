@@ -14,6 +14,7 @@ import Puzzle from "./Components/Puzzle";
 import ManagePuzzles from "./Components/ManagePuzzles";
 import Admin from "./Components/Admin";
 import Footer from "./Components/navs/Footer";
+import axios from "axios";
 
 import './App.scss';
 import AOS from 'aos';
@@ -29,17 +30,21 @@ function initializeAnalytics() {
 function App() {
   const [puzzles, setPuzzles] = useState([]);
   const [loggedIn, setLoggedIn] = useState(Boolean(localStorage.getItem("token")))
+  const [users, setUsers] = useState([])
 
   useEffect( _ => {
     initializeAnalytics();
     ReactGA.event({ category: 'App', 
     action: 'Loaded app' });
+    axios.get("https://wordlist-backend.herokuapp.com/users")
+      .then(res => setUsers(res.data))
+      .catch(err => console.log(err))
   }, [])
 
 
   return (
     <Router>
-      <WordContext.Provider value={{ puzzles, setPuzzles, loggedIn, setLoggedIn }}>
+      <WordContext.Provider value={{ users, puzzles, setPuzzles, loggedIn, setLoggedIn }}>
         <div className="App">
           <Navigation />
           <div className="Title">
