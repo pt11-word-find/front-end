@@ -36,18 +36,36 @@ const Puzzle = (props) => {
                     return {
                         word: item[0].toUpperCase() + item.slice(1),
                         solved: false
-                    }  
+                    }
                 })
                 setTitle(response.data.title)
                 setWordlist(words)
+
+                let charCount = words.reduce((acc, word) => {
+                    return acc + word.word.length
+                }, 0)
+
+                let width = Math.ceil(Math.sqrt(charCount * 2))
+
                 let longest = words.sort((a,b) => a.length - b.length)[0].word.length;
                 longest = longest > 15 ? longest : 15;
                 if (props.hard) {
+                    if (charCount >= 150) {
+                    setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), width, width, 1))
+                    } else {
                     setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest+ 1, 2))
-                }else {
+                    }
+                } else {
+                    if (charCount >= 150){
+                    setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), width, width, 1))
+                    } else {
                     setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest+ 1, 1))
+                    }
                 }
-            })
+             
+
+                
+            })            
             .catch(err => {
                 console.log("Error: ", err)
             })
