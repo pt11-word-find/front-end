@@ -3,9 +3,6 @@ import axios from "axios";
 import styled from "styled-components";
 import WordContext from "../contexts/WordContext"
 
-const Title = styled.h2`
-  color: darkgray;
-`;
 const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;

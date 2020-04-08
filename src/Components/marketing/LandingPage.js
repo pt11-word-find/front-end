@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from 'reactstrap'
 import "./LandingPage.scss"
-import Footer from '../navs/Footer'
 import landingpic from "../../images/logoillustration.png"
 import WordContext from "../../contexts/WordContext"
 

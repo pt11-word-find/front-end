@@ -1,7 +1,5 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import Puzzle from "./Puzzle";
-import WordContext from "../contexts/WordContext";
 
 const AddWordList = (props) => {
   const [wordList, setWordList] = useState({
@@ -9,7 +7,7 @@ const AddWordList = (props) => {
     wordlist: ""
 
   })
-  const {puzzle, setPuzzle} = useContext(WordContext)
+  
   const [err, setError] = useState("")
 
   const handleChange = event => {
