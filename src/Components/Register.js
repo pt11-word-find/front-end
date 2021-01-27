@@ -32,7 +32,7 @@ const Register = (props) => {
     const handleSubmit= e => {
       e.preventDefault()
       axios
-      .post ('https://wordlist-backend.herokuapp.com/auth/register', register)
+      .post ('https://wordsurge.xyz/auth/register', register)
       .then( res => {
         localStorage.setItem("token", res.data.token)
         props.history.push( "/login")})

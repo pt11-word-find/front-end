@@ -25,7 +25,7 @@ const Puzzle = (props) => {
 
     useEffect(() => {
         axios
-            .get(`https://wordlist-backend.herokuapp.com/wordlists/${props.match.params.id}`)
+            .get(`https://wordsurge.xyz/wordlists/${props.match.params.id}`)
             .then(response => {
                 let words = response.data.wordlist.split(",").map(item => {
                     return {
@@ -64,7 +64,7 @@ const Puzzle = (props) => {
             .catch(err => {
                 console.log("Error: ", err)
             })
-    }, [props.match.params.id])
+    }, [props.match.params.id, props.hard])
     
     // When letters in the array are 'Matched' to a wordlist word - change letter background colors,
     // *add to solved array*, cross word from the list or remove word from the list.
@@ -72,7 +72,7 @@ const Puzzle = (props) => {
         
         let sortedSelect = selectLetter.map(item => puzzle[item[0]][item[1]]).sort()
         
-        wordlist.map(item => {
+        wordlist.forEach(item => {
             if (arrayEqual(sortedSelect, item.word.toUpperCase().split(" ").join("").split("").sort())) { 
                 setWordlist([
                     ...wordlist.filter(oldWord => oldWord.word !== item.word), {
