@@ -7,7 +7,8 @@ export const axiosWithAuth = () => {
         headers: {
             Authorization: token
         },
-        baseURL: `https://wordlist-backend.herokuapp.com/` 
+        // baseURL: `https://wordsurge.xyz/api/`
+        baseURL: `https://wordsurge.xyz/api` 
     })
 }
 

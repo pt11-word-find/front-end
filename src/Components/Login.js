@@ -30,7 +30,7 @@ const Login = (props) => {
   const handleSubmit= e =>{
     e.preventDefault()
     axios
-    .post ('https://wordlist-backend.herokuapp.com/auth/login', log)
+    .post ('https://wordsurge.xyz/api/auth/login', log)
     .then( res => {
       localStorage.setItem("token", res.data.token);
       setLoggedIn(true);
@@ -42,7 +42,7 @@ const Login = (props) => {
 
   // Make sure to add a logout function
   return (
-      <FormWrapper className="puzzle-form"onSubmit={handleSubmit}>
+      <FormWrapper className="puzzle-form" onSubmit={handleSubmit}>
         <div className="Title">
           <h2>Please Login</h2>
         </div>
