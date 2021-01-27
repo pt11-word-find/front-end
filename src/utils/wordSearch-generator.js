@@ -31,7 +31,7 @@ export default function buildPuzzle(wordlist, puzzwidth, puzzheight, difficulty)
             let rewind = [];
             
             for (let i = 0; i< word.length; i++){
-              if (valid===true && wordsearch[row][col+i] === "-" || wordsearch[row][col+i] === word[i]) {
+              if ((valid===true && wordsearch[row][col+i] === "-") || wordsearch[row][col+i] === word[i]) {
                 if (wordsearch[row][col+i] !== word[i]){
                   rewind.push([row, col+i])
                 }
@@ -53,7 +53,7 @@ export default function buildPuzzle(wordlist, puzzwidth, puzzheight, difficulty)
             let rewind = [];
             
             for (let i = 0; i< word.length; i++){
-              if (valid === true && wordsearch[row+i][col] === "-" || wordsearch[row+i][col] === word[i]) {
+              if ((valid === true && wordsearch[row+i][col] === "-") || wordsearch[row+i][col] === word[i]) {
                 if (wordsearch[row+i][col] !== word[i]){
                   rewind.push([row+i, col])
                 }
@@ -75,7 +75,7 @@ export default function buildPuzzle(wordlist, puzzwidth, puzzheight, difficulty)
             let rewind = [];
             
             for (let i = 0; i< word.length; i++){
-              if (valid === true && wordsearch[row+i][col+i] === "-" || wordsearch[row+i][col+i] === word[i]) {
+              if ((valid === true && wordsearch[row+i][col+i] === "-") || wordsearch[row+i][col+i] === word[i]) {
                 if (wordsearch[row+i][col+i] !== word[i]){
                   rewind.push([row+i, col+i])
                 }
@@ -99,7 +99,7 @@ export default function buildPuzzle(wordlist, puzzwidth, puzzheight, difficulty)
             let rewind = [];
             
             for (let i = 0; i< word.length; i++){
-              if (valid===true && wordsearch[row-i][col+i] === "-" || wordsearch[row-i][col+i] === word[i]) {
+              if ((valid===true && wordsearch[row-i][col+i] === "-") || wordsearch[row-i][col+i] === word[i]) {
                 if (wordsearch[row-i][col+i] !== word[i]){
                   rewind.push([row-i, col+i])
                 }
@@ -121,7 +121,7 @@ export default function buildPuzzle(wordlist, puzzwidth, puzzheight, difficulty)
             let rewind = [];
             
             for (let i = 0; i< word.length; i++){
-              if (valid===true && wordsearch[row][col-i] === "-" || wordsearch[row][col-i] === word[i]) {
+              if ((valid===true && wordsearch[row][col-i] === "-") || wordsearch[row][col-i] === word[i]) {
                 if (wordsearch[row][col-i] !== word[i]){
                   rewind.push([row, col-i])
                 }
@@ -144,7 +144,7 @@ export default function buildPuzzle(wordlist, puzzwidth, puzzheight, difficulty)
             let rewind = [];
             
             for (let i = 0; i< word.length; i++){
-              if (valid===true && wordsearch[row-i][col] === "-" || wordsearch[row-i][col] === word[i]) {
+              if ((valid===true && wordsearch[row-i][col] === "-") || wordsearch[row-i][col] === word[i]) {
                 if (wordsearch[row-i][col] !== word[i]){
                   rewind.push([row-i, col])
                 }
@@ -167,7 +167,7 @@ export default function buildPuzzle(wordlist, puzzwidth, puzzheight, difficulty)
             let rewind = [];
             
             for (let i = 0; i< word.length; i++){
-              if (valid===true && wordsearch[row+i][col-i] === "-" || wordsearch[row+i][col-i] === word[i]) {
+              if ((valid===true && wordsearch[row+i][col-i] === "-") || wordsearch[row+i][col-i] === word[i]) {
                 if (wordsearch[row+i][col-i] !== word[i]){
                   rewind.push([row+i , col-i])
                 }
@@ -190,7 +190,7 @@ export default function buildPuzzle(wordlist, puzzwidth, puzzheight, difficulty)
             let rewind = [];
             
             for (let i = 0; i< word.length; i++){
-              if (valid===true && wordsearch[row-i][col-i] === "-" || wordsearch[row-i][col-i] === word[i]) {
+              if ((valid===true && wordsearch[row-i][col-i] === "-") || wordsearch[row-i][col-i] === word[i]) {
                 if (wordsearch[row-i][col-i] !== word[i]){
                   rewind.push([row-i,col-i])
                 }
