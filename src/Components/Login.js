@@ -30,7 +30,7 @@ const Login = (props) => {
   const handleSubmit= e =>{
     e.preventDefault()
     axios
-    .post ('https://wordsurge.xyz/auth/login', log)
+    .post ('https://wordsurge.xyz/api/auth/login', log)
     .then( res => {
       localStorage.setItem("token", res.data.token);
       setLoggedIn(true);
