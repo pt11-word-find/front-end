@@ -25,7 +25,7 @@ const Puzzle = (props) => {
 
     useEffect(() => {
         axios
-            .get(`https://wordsurge.xyz/wordlists/${props.match.params.id}`)
+            .get(`https://wordsurge.xyz/api/wordlists/${props.match.params.id}`)
             .then(response => {
                 let words = response.data.wordlist.split(",").map(item => {
                     return {
