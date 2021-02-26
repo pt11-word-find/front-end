@@ -32,7 +32,8 @@ const PuzzleList=()=>{
       {puzzles.map(item => {
         return <div key={item.id} className="puzzle-link">
           <h4>{item.title}</h4>
-          <h5>By {users.find(user => item.user_id === user.id).username}</h5>
+          {/* <h5>By {users.find(user => item.user_id === user.id).username}</h5> */}
+          <h5>By User</h5>
           <Link to={`/puzzles/${item.id}`}><button className="manage-button difficulty-button">Easy</button></Link>
           <Link to={`/puzzles/hard/${item.id}`}><button className="manage-button difficulty-button">Hard</button></Link>
         </div>})}   
