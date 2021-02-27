@@ -36,7 +36,7 @@ function App() {
     initializeAnalytics();
     ReactGA.event({ category: 'App', 
     action: 'Loaded app' });
-    axios.get("https://wordlist-backend.herokuapp.com/users")
+    axios.get("https://wordsurge.xyz/api/users")
       .then(res => setUsers(res.data))
       .catch(err => console.log(err))
   }, [])
