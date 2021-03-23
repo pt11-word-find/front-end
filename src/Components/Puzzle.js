@@ -8,8 +8,8 @@ import axios from "axios";
 import Modal from "./Modal";
 
 const Puzzle = (props) => {
-    const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
-    const [colors, setColors] = useState()
+    // const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
+    // const [colors, setColors] = useState()
     const fonts = ["bookman", "comicsans", "impact", "default-font", "lucida"]
     const [puzzle, setPuzzle] = useState([[]])
     const [selectLetter, setSelectLetter] = useState([])
