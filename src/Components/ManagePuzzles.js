@@ -35,7 +35,7 @@ const ManagePuzzles = (props) => {
         <Link to="/puzzles">Back</Link> to Puzzle List
 
         {myPuzzles.length > 0 ? <div className="manage-puzzles">
-        {myPuzzles.map(item => {
+        {myPuzzles.forEach(item => {
             return <div className="puzzle-link">
             <h4>{item.title}</h4>
             <Link to={`/puzzles/${item.id}`}><button className="manage-button difficulty-button">Easy</button></Link>
