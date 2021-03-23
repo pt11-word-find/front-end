@@ -8,7 +8,8 @@ import axios from "axios";
 import Modal from "./Modal";
 
 const Puzzle = (props) => {
-    //const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
+    const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
+    const [colors, setColors] = useState()
     const fonts = ["bookman", "comicsans", "impact", "default-font", "lucida"]
     const [puzzle, setPuzzle] = useState([[]])
     const [selectLetter, setSelectLetter] = useState([])
@@ -45,13 +46,13 @@ const Puzzle = (props) => {
                 let longest = words.sort((a,b) => a.length - b.length)[0].word.length;
                 longest = longest > 15 ? longest : 15;
                 if (props.hard) {
-                    if (charCount >= 150) {
+                    if (charCount <= 150) {
                     setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), width, width, 2))
                     } else {
                     setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest+ 1, 2))
                     }
                 } else {
-                    if (charCount >= 150){
+                    if (charCount <= 150){
                     setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), width, width, 1))
                     } else {
                     setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest+ 1, 1))
@@ -67,7 +68,7 @@ const Puzzle = (props) => {
     }, [props.match.params.id, props.hard])
     
     // When letters in the array are 'Matched' to a wordlist word - change letter background colors,
-    // *add to solved array*, cross word from the list or remove word from the list.
+    // *add to solved array*, cross word from the list.
     useEffect(() => {
         
         let sortedSelect = selectLetter.map(item => puzzle[item[0]][item[1]]).sort()

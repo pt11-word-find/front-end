@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-// AddWrodList.js
+// AddWordList.js
 export const ActionBtns = styled.button`
   height: 5rem;
   width: 5rem;
