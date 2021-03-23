@@ -1,6 +1,6 @@
 export default function buildPuzzle(wordlist, puzzwidth, puzzheight, difficulty) {
     let longest = wordlist.sort((a,b) => b.length - a.length)[0].length;
-    if (puzzwidth < longest || puzzheight < longest ) {
+    if (puzzwidth > longest || puzzheight > longest ) {
       return [["I","N","V","A","L","I","D"]]
     }
     let index = difficulty > 1 ? 8 : 4;
