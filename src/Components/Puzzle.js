@@ -49,17 +49,15 @@ const Puzzle = (props) => {
                     if (charCount >= 150) {
                     setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), width, width, 2))
                     } else {
-                    setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest+ 1, 2))
+                    setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest + 1, 2))
                     }
                 } else {
                     if (charCount >= 150){
                     setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), width, width, 1))
                     } else {
-                    setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest+ 1, 1))
+                    setPuzzle(wordSearch(words.map(item => item.word.toUpperCase().split(" ").join("")), longest + 1, longest + 1, 1))
                     }
                 }
-             
-
                 
             })            
             .catch(err => {
@@ -74,19 +72,21 @@ const Puzzle = (props) => {
         let sortedSelect = selectLetter.map(item => puzzle[item[0]][item[1]]).sort()
         
         wordlist.forEach(item => {
-            if (arrayEqual(sortedSelect, item.word.toUpperCase().split(" ").join("").split("").sort())) { 
-                setWordlist([
-                    ...wordlist.filter(oldWord => oldWord.word !== item.word), {
-                        word: item.word,
-                        solved: true
-                    }
-                 ])
-                setSolved([...selectLetter, ...solved])
-                setSelectLetter([])
+                if (arrayEqual(sortedSelect, item.word.toUpperCase().split(" ").join("").split("").sort())) { 
+                        setWordlist([
+                        ...wordlist.filter(oldWord => oldWord.word !== item.word), {
+                            word: item.word,
+                            solved: true   
+                        }
+                    ])
+                    
+                    setSolved([...selectLetter, ...solved])
+                    setSelectLetter([])
+                    
+                }
 
-            }
-
-        }, [selectLetter])
+            }, [selectLetter])
+        
     })
 
     // tile = [row, col]

@@ -11,6 +11,7 @@ const ManagePuzzles = (props) => {
         axiosWithAuth()
             .get(`wordlists/mine`)
             .then(response => {
+                console.log(response.data)
                 setMyPuzzles(response.data)
             })
             .catch(err => {
@@ -35,8 +36,8 @@ const ManagePuzzles = (props) => {
         <Link to="/puzzles">Back</Link> to Puzzle List
 
         {myPuzzles.length > 0 ? <div className="manage-puzzles">
-        {myPuzzles.forEach(item => {
-            return <div className="puzzle-link">
+        {myPuzzles.map(item => {
+            return <div key={item.id} className="puzzle-link">
             <h4>{item.title}</h4>
             <Link to={`/puzzles/${item.id}`}><button className="manage-button difficulty-button">Easy</button></Link>
             <Link to={`/puzzles/hard/${item.id}`}><button className="manage-button difficulty-button">Hard</button></Link>
