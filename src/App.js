@@ -49,7 +49,6 @@ function App() {
           <Navigation />
           <div className="Title">
             <ProtectedRoute exact path="/addWords" component={AddWordList} />
-            {/* <ProtectedRoute exact path="/updateWords" component={UpdatedWords} /> */}
             <Route exact path="/" component={LandingPage} />
             <Route path="/about" component={AboutPage} />
             <Route path="/login" component={Login} />
