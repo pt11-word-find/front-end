@@ -10,12 +10,6 @@ const FormWrapper = styled.form`
   
 `;
 
-/*
-Rich Black Green: #073c3f
-Myrtle Green: #2c666e
-Baby Blue: #90ddf0
-*/
-
 const Login = (props) => {
   const {setLoggedIn} = React.useContext(WordContext)
   const [log, setLog] = useState({
@@ -39,8 +33,7 @@ const Login = (props) => {
         console.log (err)
     })
   }
-
-  // Make sure to add a logout function
+  
   return (
       <FormWrapper className="puzzle-form" onSubmit={handleSubmit}>
         <div className="Title">

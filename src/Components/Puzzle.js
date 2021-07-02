@@ -89,13 +89,7 @@ const Puzzle = (props) => {
         
     })
 
-    // tile = [row, col]
-    // selectLetter is an array
-    // setSelectLetter is a function that sets selectLetter
-    // if selectLetter contains tile, remove tile
-    // if selectLetter does not contain tile, add tile to the array, color letter to indicate it's in the array.
-    
-    const toggleLetter = (r_index, c_index) => {
+        const toggleLetter = (r_index, c_index) => {
         if (wordlist.length === wordlist.filter(item => item.solved).length) return
         if (arrayIncluded(selectLetter, [r_index, c_index])) {
             setSelectLetter(selectLetter.filter(item => !arrayEqual(item, [r_index, c_index])))
