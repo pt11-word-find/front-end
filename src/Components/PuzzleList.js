@@ -17,7 +17,6 @@ const PuzzleList=()=>{
         })
     }, [setPuzzles])
 
-    // If loggedIn === true, show managepuzzles link 
     return(
       <>
       

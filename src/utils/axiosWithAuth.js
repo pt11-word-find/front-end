@@ -7,9 +7,7 @@ export const axiosWithAuth = () => {
         headers: {
             Authorization: token
         },
-        baseURL: `https://wordsurge.xyz/api/`
-        // baseURL: `http://localhost:5000`
-         
+        baseURL: `https://wordsurge.xyz/api/`         
     })
 }
 

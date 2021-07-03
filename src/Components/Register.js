@@ -9,15 +9,6 @@ const FormWrapper = styled.form`
   align-items: center;
 `;
 
-// const Title = styled.h2`
-//   color: darkgray;
-// `;
-/*
-Rich Black Green: #073c3f
-Myrtle Green: #2c666e
-Baby Blue: #90ddf0
-*/
-
 const Register = (props) => {
 
     const [register, setRegister] = useState({
