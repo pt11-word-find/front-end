@@ -9,7 +9,7 @@ const Modal = ({ modal }) => {
     return (
       <div className={showHideClassName}>
         <section>
-          {<img src={stars} alt="star graphic"></img>}
+          <img src={stars} alt="star graphic"></img>
           <br />
           <Link to="/puzzles"><button type="submit" className="manage-button">Select a New Puzzle</button></Link>
         </section>

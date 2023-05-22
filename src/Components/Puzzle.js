@@ -8,8 +8,8 @@ import axios from "axios";
 import Modal from "./Modal";
 
 const Puzzle = (props) => {
-    // const colors = ["#FF0000", "FF8C00", "FFFF00", "00FF00", "87CEFA", "7B68EE", "EE82EE", "#FFEFD5"]
-    // const [colors, setColors] = useState()
+    const colors = ["red", "orange", "yellow", "green", "lt-blue", "purple", "pink", "peach", "lt-grey"]
+    const [color, setColor] = useState(8)
     const fonts = ["bookman", "comicsans", "impact", "default-font", "lucida"]
     const [puzzle, setPuzzle] = useState([[]])
     const [selectLetter, setSelectLetter] = useState([])
@@ -108,7 +108,7 @@ const Puzzle = (props) => {
 
     return (
         <div data-aos="fade-up" className="container">
-        <div className={`puzzle ${fonts[font]}`} style={{padding: "0 .25", width: puzzle.length > 20 ? "60vw" : ""}}>
+        <div className={`puzzle ${fonts[font]} ${colors[color]}`} style={{padding: "auto .25", width: puzzle.length > 20 ? "40vw" : ""}}>
             {(wordlist.length > 0 && wordlist.length === wordlist.filter(item => item.solved).length) 
             ? 
             (
@@ -135,7 +135,10 @@ const Puzzle = (props) => {
                     )}
                 </div>
             )}
-            {wordlist.length > 0 ? <button className="font-button manage-button" onClick={_ => setFont( (font + 1) % 5 )}>Change font</button> : null }
+            <div className="button-space">
+                {wordlist.length > 0 ? <button className="font-button manage-button" onClick={_ => setFont((font + 1) % 5)}>Change font</button> : null }
+                {wordlist.length > 0 ? <button className="small-font manage-button" onClick={_ => setColor((color + 1) % 9)}>Change background</button> : null }
+            </div>
         </div>
         <div className="word-list">
             {wordlist.map(word => 

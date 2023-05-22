@@ -2,17 +2,19 @@
     display: flex;
     justify-content: center;
     .puzzle {
-      margin-top: 1%;
+      margin: 1%;
       display: flex;
       flex-direction: column;
-      width: 600px;
+      width: fit-content;
       user-select: none;
       background: #F0EDEE;
       border: 1px solid black;
       h3 {
-        margin: 10px auto;
+        margin: 1% auto;
         border: 1px solid black;
-        width: 30%;
+        border-radius: 8px;
+        padding: 1rem;
+        width: 60%;
       }
       .selectedTile {
         background: #2C666E;
@@ -23,8 +25,8 @@
         color: black;
       }
       .row {
-        justify-content: center;
         display: flex;
+        justify-content: center;
         .tile {
           display: inline-block;
           align-items: center;
@@ -33,7 +35,7 @@
           height: 30px;
           justify-content: center;
           text-align: center;
-          padding-top: 3px;
+          padding-top: 1%;
           cursor: pointer;
         }
       }
@@ -47,25 +49,19 @@
         left:50%;
         transform: translate(-50%,-50%);
         .manage-button {
-          width: 200px;
-          
+          width: 200px;  
         }
       }
-
-      
-
     }
 
     .word-list {
       display: flex;
       border: 1px black solid;
       text-align: left;
-      padding: 2%;
-      max-height: 40vmax;
-      margin: 1%;
+      margin-top: 1%;
+      max-height: 36.75vmax;
       flex-flow: column wrap;
-      width: 25%;
-      justify-content: flex-start;
+      width:10%;
       background: #F0EDEE;
       border: 1px solid black;
       .word {
@@ -75,7 +71,38 @@
     .crossedOut {
         text-decoration: line-through;
     }
+
+    // change background colors
+    .red {
+      background: #fd2727;
+      color: whitesmoke;
+    }
+    .orange {
+      background: #FF8C00;
+    }
+    .yellow {
+      background: #FFFF00;
+    }
+    .green {
+      background: #00FF00;
+    }
+    .lt-blue {
+      background: #b3def8;
+    }
+     .purple {
+      background: #a799f8;
+    }
+    .pink {
+      background: #EE82EE;
+    }
+    .peach {
+      background: #FFEFD5;
+    }
+    .lt-grey {
+      background: #F0EDEE;
+    }
     
+    // change fonts
     .comicsans {
         font-family: "Comic Sans MS", cursive, sans-serif;
     }
@@ -95,7 +122,8 @@
     }
     .manage-button {
         font-size: 1.15rem;
-        align-self: center;
+        text-align: center;
+        align-content: space-around;
         margin-top: 3%;
         height: 30px;
         width: 150px;
@@ -111,7 +139,14 @@
             transition: .6s;
         }
     }
-
+    .small-font {
+      font-size: .98em;
+    }
+    .button-space {
+      display: flex;
+      gap: 3rem;
+      justify-content: center;
+    }
   }
 
   @media screen and (max-width:800px) {

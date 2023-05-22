@@ -1,9 +1,7 @@
 import React from 'react';
 import Mike from "../../images/mike.png";
 import Kristi from "../../images/kristi.png";
-import Shya from "../../images/shya.png";
-import Brian from "../../images/brian.png";
-import Catherine from "../../images/catherine.png";
+import Jonathan from "../../images/jonathan.png";
 import "./AboutPage.scss";
 
 const AboutPage = () => {
@@ -45,67 +43,22 @@ const AboutPage = () => {
   
         <div className="CardBody">
           <div className="CardTitle">
-            <h3>Brian Leonard</h3>
-              <img className="CardImg" src={Brian} alt="Brian Leonard" />           
+            <h3>Jonathan Durham</h3>
+              <img className="CardImg" src={Jonathan} alt="Jonathan Durham" />           
                 <div className="CardText">
-                <h4>Junior Node Engineer</h4>
+                <h4>Junior Engineer</h4>
                 <p>
                   <div>
-                    Brian is a full stack web developer and lifelong learner. His strong work ethic and inquisitive nature made
-                    him a great asset to this project.
+                    Jonathan is a Junior Engineer putting his training as a Full Stack Engineer to work for this project.  He expect to make many
+                    contributions that increase the success of the site.
                   </div>
                 </p>
                 </div>
             </div>
         </div>
-        
-        <div className="CardBody">
-          <div className="CardTitle">
-            <h3>Shya Biswas</h3>
-              <img className="CardImg" src={Shya} alt="Shya Biswas" />           
-                <div className="CardText">
-                <h4>About Page</h4>
-                <p>
-                  <div>
-                  Shya Biswas is presently persuing full stack webdevelopment
-                  course at lambda school. Shya is originally from India, she
-                  has a PhD in Biotechnology and several years of teaching and
-                  research experience in several labs here in the US. Her
-                  research focuses on biology of aging and life extension. Shya
-                  also runs a monthly Biotech magazine where she publishes
-                  articles on latest biotechnology news, research and
-                  developments. Her interest in web-development started while
-                  working on her magazine and building website for her magazine,
-                  she can be reached at shyabiswas@gmail.com{" "}
-                  </div>
-                </p>
-                </div>
-            </div>
-          </div>
-          
-        <div className="CardBody">
-          <div className="CardTitle">
-            <h3>Catherine Kim</h3>
-              <img className="CardImg" src={Catherine} alt="Catherine Kim" />           
-                <div className="CardText">
-                <h4>Styles + Github Guru</h4>
-                <p>
-                  <div>
-                    Catherine is a full stack developer with a growth mindset.
-                    What sets her apart is her “prior-life” work experience on the
-                    patent prosecution and litigation side of the IP world. This
-                    IP background enables her to bridge the legal and tech
-                    needs of a user from a pragmatic, real-world IP space
-                    perspective. Her passion is to shape IP
-                    workflow management, analytics, & transactions in a much more
-                    dynamic, intuitive and easier way than ever before.
-                  </div>
-                </p>
-                </div>
-            </div>
-          </div>
-        </div>
+
       </div>
+    </div>
    
   );
 }

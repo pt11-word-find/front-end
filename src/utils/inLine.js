@@ -26,7 +26,7 @@ export default function inLine(arr1, arr2, puzzle) {
         if (firstpoint[0] === secondpoint[0] && firstpoint[0] === arr2[0]) return true
         // if they're on the same column
         if (firstpoint[1] === secondpoint[1] && firstpoint[1] === arr2[1]) return true
-        //  if they're diagona down-right
+        //  if they're diagonal down-right
         if (firstpoint[0] + arr2[0] === firstpoint[1] + arr2[1]) return true
         // if they're diagonal up-right
         if (Math.abs(firstpoint[0] - arr2[0]) === Math.abs(firstpoint[1] - arr2[1])) return true
